@@ -10,6 +10,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 
 ## Pages
 
+- [Vet Clinic Missed Calls: What They Cost and How to Stop Them](https://vetreception.swades.ai/the-problem-in-the-words-veterinary-practices-use/): Missed calls at a veterinary practice are not a front-desk failure. Here is what they cost, why they persist, and how calls get answered and booked.
 - [Veterinary Practices Pricing: How VetReception Is Priced](https://vetreception.swades.ai/pricing-for-veterinary-practices/): How VetReception pricing works for veterinary practices: what sets the price, what is included, what you pay today for after-hours coverage, and the FAQ.
 - [VetReception Integrations: PIMS Booking and Call Summaries](https://vetreception.swades.ai/works-with-the-software-veterinary-practices-already-run/): Which practice management systems VetReception books into, what each connection writes back, how setup runs, and what happens on a clinical call.
 
@@ -62,3 +63,8 @@ An integration is the difference between a call that was answered and an appoint
 https://vetreception.swades.ai/blog/vetspire-integration/
 
 VetReception connects to Vetspire so that calls your front desk cannot reach are answered, triaged and booked without a human at the phone. The connection is a booking and record-writing integration, not a clinical one: the system reads your appointment types and provider availability from Vetspire and writes a booked appointment back into the same schedule your team already works from.
+
+## Vet Clinic Missed Calls: What They Cost and How to Stop Them
+https://vetreception.swades.ai/the-problem-in-the-words-veterinary-practices-use/
+
+A missed call at a small-animal practice is rarely a phone nobody heard. It is a call that arrived while the two people at the front desk were checking in a euthanasia, taking payment for a dental, and answering the other line. It is a call at 7:40pm after the last appointment, and a call at 3:12am from an owner whose dog is vomiting.
