@@ -1,0 +1,105 @@
+---
+title: "Emergency Vet Call Triage: How Calls Get Sorted 24/7"
+description: "How emergency vet call triage works when the call arrives at 3am: protocol-based sorting, PIMS booking, and what the front desk gets instead of a voicemail."
+pageType: "article"
+keyword: "emergency vet call triage"
+schemaType: "FAQPage"
+publishedAt: "2026-09-26"
+updatedAt: "2026-09-25"
+brand: "VetReception"
+faq:
+  - q: "How does the system know what counts as an emergency for my practice?"
+    a: "It uses the practice's own written emergency protocol. During setup, that document is converted into call branches: a set of questions, each with outcomes that map to an action — come in now, book today, book later, or route to a person. The system does not apply a generic urgency model, and it does not infer urgency from tone of voice. If a presentation is not covered by the protocol, the call routes to a named person at the practice rather than being sorted by guesswork. Practices with an existing written protocol move through setup faster than those keeping it in a senior veterinarian's head."
+  - q: "What happens to a call that arrives while everyone is in surgery?"
+    a: "It is answered and sorted the same way as any other call. The system collects species, presenting problem, duration and stability, then follows the protocol. An emergency notifies the on-call veterinarian; a routine request books an appointment; a refill follows the refill workflow. Nobody leaves the room. The front desk gets a written summary attached to the client record rather than a voicemail to work through later. This is the case practices most often underestimate, because the calls that arrive during surgery are indistinguishable from emergencies until someone picks up."
+  - q: "Does the system give clinical advice to callers?"
+    a: "No. It never gives clinical advice. Anything clinical — a question about a medication, a dose, a prognosis, or whether a particular symptom means something — is routed to a named person at the practice. The system sorts calls and books appointments; it does not practise veterinary medicine. This boundary is deliberate and it is enforced at the protocol level: clinical questions are a routing outcome, not a branch the system answers. Callers who ask something clinical are told a person will call them back, and that callback is logged."
+  - q: "How does booking work with the PIMS we already run?"
+    a: "Booking is written into the PIMS, not into a message. The connection reads the practice's appointment types and availability and writes the booked appointment back to the schedule, with the call summary attached to the client record. Supported systems include Avimark, Cornerstone, ezyVet, Shepherd and Vetspire, with the reads and writes for each listed on the integrations page. The practice keeps its existing PIMS; nothing is migrated. Setup requires access to the PIMS and a test pass to confirm appointment types and durations map correctly."
+  - q: "How is this priced, and what is the alternative costing us?"
+    a: "Pricing is per practice and depends on call volume and the number of PIMS connections; the veterinary practices pricing page sets out how it is calculated. There is no per-minute billing, which matters because triage calls run longer than routine ones. The honest comparison is not against a voicemail box, which is close to free and loses calls, but against the value of the calls that currently go unanswered after hours. The call cost calculator walks through that arithmetic using the practice's own call volume and average visit value."
+  - q: "What does setup actually require from us?"
+    a: "Three things: the written emergency protocol, the appointment types and durations, and PIMS access. The build converts the protocol into call branches, connects the booking write, and runs test calls that the practice can walk through itself. Most of the effort sits on the practice side, in producing the protocol in a form that can be turned into questions. Branches can be changed later without a rebuild, so a protocol that evolves does not require a new implementation. Practices typically run test calls before going live on the main number."
+---
+Emergency vet call triage is the process of deciding, on the call itself, whether the animal needs to be seen now, today, or at a booked appointment — and then acting on that decision before the caller hangs up. VetReception does this against the practice's own written emergency protocol rather than a generic urgency model, and writes the outcome into the PIMS.
+
+## Why triage is the hard part of the call, not the answering
+
+Answering a phone is a solved problem. Sorting the call is not. A practice's emergency protocol encodes years of clinical judgement: which presentations come in immediately, which can wait until morning, which need a phone call back from a veterinarian before anyone drives anywhere. That judgement is what a generic answering service cannot reproduce, because it was never given the protocol.
+
+A message-taking service records what the caller says and passes it on. The sorting happens later, by whoever reads the message — usually the first person at the desk the next morning, reading a note about a dog that was vomiting at 2am. By then the decision is stale and the client has already called the next clinic on the list.
+
+Triage on the call changes the sequence. The decision is made while the caller is still on the line, so the caller hears an answer rather than a promise of one.
+
+## What the caller hears, in order
+
+The call opens with the practice name and a statement that the line is answered for the practice. Then the system collects the minimum it needs to sort: species, the presenting problem in the caller's words, how long it has been going on, and whether the animal is currently stable enough to travel.
+
+From there the call follows the practice's protocol. Three outcomes are typical:
+
+- **Seen now.** The caller is told to come in, given the address and the after-hours entry instruction, and the practice's on-call veterinarian is notified.
+- **Seen today.** An appointment is booked into the next suitable slot and the caller is told the time.
+- **Booked later.** A routine appointment is booked, or a callback is scheduled for the next business day.
+
+Anything clinical — a question about a drug, a dose, a prognosis, whether a symptom means something — is routed to a named person at the practice. The system never gives clinical advice. It sorts and it books; it does not practise.
+
+## What the front desk gets in the morning
+
+The output is not a voicemail. Every call produces a written summary: who called, what the animal was doing, which protocol branch fired, what was booked, and what was promised to the caller. That summary is attached to the client record and to the appointment.
+
+This matters more than it sounds. A voicemail has to be listened to, transcribed mentally, and reconciled against the schedule. A written summary is already reconciled — the appointment exists, the client record has the note, and the desk can see at a glance which calls turned into visits and which did not.
+
+For practices running a [veterinary answering service](/blog/veterinary-answering-service/) alongside their own staff, the difference is the reconciliation step. Messages create work; summaries close it.
+
+## How triage becomes decision rules
+
+A protocol document is prose. To run on a phone call it has to become decision rules: a set of questions, each with branches, each branch ending in an action. The practice supplies the protocol; the build turns it into the call flow.
+
+In practice this means sitting with the practice's written emergency protocol and identifying the questions that separate one branch from another. "Vomiting" is not a branch. "Vomiting with a known foreign body ingestion" is. The work is in finding the questions the protocol already implies but does not spell out as questions.
+
+Once built, the flow is testable. A practice can call its own number and walk through the branches, and can change a branch without a rebuild. The [veterinary triage protocol phone](/blog/veterinary-triage-protocol-phone/) page covers the mechanics of that conversion in more detail.
+
+## The calls that arrive when nobody is at the desk
+
+Independent small-animal practices running one to six veterinarians rarely staff an overnight desk. The calls that arrive in that window are the ones triage matters most for, including the ones that arrive at 3am and the ones that arrive while the whole team is in surgery.
+
+During surgery is the underrated case. The phone rings in a treatment room where everyone is scrubbed in, and nobody can answer it. Those calls are not emergencies by default — many are appointment requests, refill requests, or questions about a bill — but they are indistinguishable from emergencies until someone picks up.
+
+A protocol-driven line sorts them without a person leaving the room. The emergency goes to the on-call veterinarian; the refill goes to the [prescription refill request line](/blog/prescription-refill-request-line/) workflow; the appointment gets booked.
+
+## What the system will not do
+
+It will not give clinical advice, and it will not decide that a caller is overreacting. If a caller describes something the protocol does not cover, the call routes to a person rather than being sorted by inference.
+
+It also will not replace the practice's judgement about its own protocol. If the protocol says a presentation comes in immediately, the system sends it in immediately, even if a human might have talked the caller down. The protocol is the practice's, and the system follows it.
+
+## How this compares to the alternatives
+
+| Approach | Who sorts the call | When sorting happens | What the desk receives |
+|---|---|---|---|
+| Voicemail | Nobody until morning | Next business day | A recording |
+| Message-taking service | A human with a generic script | During the call, without the protocol | A message |
+| On-call staff phone | The person who answers | During the call | A verbal handover |
+| Protocol-driven triage | The practice's own protocol | During the call | A written summary and a booked appointment |
+
+The distinction that matters is not human versus automated. It is whether the sorting uses the practice's protocol or someone else's script. A human answering service with a generic script sorts worse than a protocol-driven system, because the script does not know what this practice considers an emergency.
+
+## What setup involves
+
+The practice provides its written emergency protocol, its appointment types and durations, and access to its PIMS. The build converts the protocol into call branches, connects the booking write, and runs test calls.
+
+Most of the effort sits on the practice side, in producing the protocol in a form that can be turned into questions. Practices that already have a written protocol move faster than practices that keep it in the head of the senior veterinarian.
+
+Booking writes into the PIMS the practice already runs. The [integrations page](/works-with-the-software-veterinary-practices-already-run/) lists what the connection reads and writes for each system, including [Avimark](/blog/avimark-integration/), [ezyVet](/blog/ezyvet-integration/), [Shepherd](/blog/shepherd-veterinary-software-integration/), and [Vetspire](/blog/vetspire-integration/).
+
+## Where the money goes
+
+Pricing is per practice, based on call volume and the number of PIMS connections, and is set out on the [veterinary practices pricing](/pricing-for-veterinary-practices/) page. There is no per-minute billing, which matters because the calls that need the most triage are also the longest.
+
+The comparison a buyer should run is against the cost of the calls that currently go unanswered, not against the cost of a voicemail box. The [call cost calculator](/what-veterinary-practices-spend-on-this-a-calculator/) walks through that arithmetic using the practice's own numbers.
+
+## The short version
+
+Emergency vet call triage is a protocol problem before it is a technology problem. A practice that can write down what it considers an emergency can have that judgement applied on every call, at every hour, and written into the PIMS before the front desk arrives.
+
+Start with the [main page](/) for how the line works end to end, or read [after hours vet phone answering](/blog/after-hours-vet-phone-answering/) for the overnight case specifically.
