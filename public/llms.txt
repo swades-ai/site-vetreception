@@ -7,3 +7,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 ## Start here
 
 - [VetReception: 24/7 Vet Call Answering Into Your PIMS](https://vetreception.swades.ai/): VetReception answers every veterinary call, triages against the practice's own written emergency protocol, and books straight into the PIMS.
+
+## Pages
+
+- [Veterinary Practices Pricing: How VetReception Is Priced](https://vetreception.swades.ai/pricing-for-veterinary-practices/): How VetReception pricing works for veterinary practices: what sets the price, what is included, what you pay today for after-hours coverage, and the FAQ.
