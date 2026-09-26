@@ -16,6 +16,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 ## Blog
 
 - [AI Receptionist for Veterinary Clinics: Call Handling Guide](https://vetreception.swades.ai/blog/ai-receptionist-for-veterinary-clinics/): How an AI receptionist for veterinary clinics answers, triages against your own protocol and books into the PIMS. Setup, comparison and what to measure.
+- [Avimark Integration: Booking Calls Into Avimark 24/7](https://vetreception.swades.ai/blog/avimark-integration/): How VetReception's Avimark integration turns an after-hours call into an appointment on your schedule, triaged against your own written emergency protocol.
 
 ---
 
@@ -29,12 +30,17 @@ https://vetreception.swades.ai/
 
 VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own written emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
 
+## AI Receptionist for Veterinary Clinics: Call Handling Guide
+https://vetreception.swades.ai/blog/ai-receptionist-for-veterinary-clinics/
+
+An AI receptionist for veterinary clinics answers the phone line, works out how urgent the call is against your protocol, and writes the booking into your practice management system. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+
 ## VetReception Integrations: PIMS Booking and Call Summaries
 https://vetreception.swades.ai/works-with-the-software-veterinary-practices-already-run/
 
 An integration is the difference between a call that was answered and an appointment that exists. VetReception answers the calls your front desk cannot get to, and the connection is what turns that answered call into a booking written into the PIMS as a real appointment on the real schedule, with the client and patient matched to existing records where they exist.
 
-## AI Receptionist for Veterinary Clinics: Call Handling Guide
-https://vetreception.swades.ai/blog/ai-receptionist-for-veterinary-clinics/
+## Avimark Integration: Booking Calls Into Avimark 24/7
+https://vetreception.swades.ai/blog/avimark-integration/
 
-An AI receptionist for veterinary clinics answers the phone line, works out how urgent the call is against your protocol, and writes the booking into your practice management system. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+VetReception answers calls your practice cannot get to and writes the booking into Avimark while the caller is still on the line. The appointment appears on the schedule your team already reads, with the reason for the visit attached, so nobody retypes a message in the morning.

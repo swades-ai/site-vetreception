@@ -1,0 +1,155 @@
+---
+title: "Avimark Integration: Booking Calls Into Avimark 24/7"
+description: "How VetReception's Avimark integration turns an after-hours call into an appointment on your schedule, triaged against your own written emergency protocol."
+pageType: "article"
+keyword: "avimark integration"
+schemaType: "Article"
+publishedAt: "2026-09-26"
+updatedAt: "2026-09-25"
+brand: "VetReception"
+faq:
+  - q: "Does VetReception really book into Avimark, or does it send a message?"
+    a: "It books. The appointment is created on the Avimark schedule during the call, on the correct doctor's column, with the reason for the visit attached. Where the caller is a new client, the client and patient records are created as part of the same booking. The front desk also receives a written summary attached to the client record, so the context is there without anyone listening to a recording. If a vendor cannot show you a booking appearing on your own schedule in a test, they are sending messages rather than integrating, whatever the label says."
+  - q: "Whose emergency protocol decides how a call is triaged?"
+    a: "Yours. You supply the written emergency protocol your practice already works from, and the call flow is built to match it. Triage follows the practice's own written emergency protocol rather than a generic urgency model, so the questions asked on the call are the questions your vets ask. The protocol is versioned, so if you revise it the calls follow the new version and the summary records which version handled the call. When a call falls outside the protocol, the system takes a message and routes it to a named person rather than improvising."
+  - q: "Can the system give clinical advice to a worried owner at 3am?"
+    a: "No. The system never gives clinical advice. It asks the questions in your protocol, records the answers, and either books an appointment or routes the call to a named person on your escalation list. It does not tell an owner what might be wrong with the animal, what to give it, or whether to wait until morning. That boundary is deliberate: the triage decides urgency and routing, and every clinical judgement belongs to a vet. The written summary records who the call was routed to and when, so nothing disappears."
+  - q: "What happens if Avimark is unavailable when a call comes in?"
+    a: "The call is still answered and triaged; the booking is held and written when the connection returns, and the summary records that the booking was delayed. The front desk sees the call in the summary either way. This is one of the questions worth putting to any vendor directly, because the answer tells you whether the integration is a live connection or a batch process. Ask specifically what happens during an Avimark update window, since those often run outside business hours."
+  - q: "How does this compare with a human answering service?"
+    a: "A human answering service answers the phone and takes a message, usually delivering it by email or fax. The operator works from a script and has no access to your protocol, so a blocked cat and a cat with a hairball both get written down as an owner concern. Pricing for those services is typically quoted per minute or per call and is not public in a comparable form, so ask for a per-call figure. The difference that matters is what reaches Avimark: a booking on the schedule, or a message someone still has to type in."
+---
+## What the Avimark integration does
+
+VetReception answers calls your practice cannot get to and writes the booking into Avimark while the caller is still on the line. The appointment appears on the schedule your team already reads, with the reason for the visit attached, so nobody retypes a message in the morning.
+
+The connection is live rather than a nightly import. Records are matched or created during the call, and the call summary is attached to the client file rather than emailed as a separate document. [How veterinary practices use it](/how-veterinary-practices-use-it/) walks through a full call from ring to written summary.
+
+### What lands in Avimark
+
+Each call produces a client record, a patient record where the animal is already known, an appointment on the correct doctor's column, and a written summary on the client's file. The summary is prose: who called, what they said, what was booked, and what still needs a human.
+
+### What does not land in Avimark
+
+No clinical notes, no treatment entries, no prescriptions, no invoice lines. The system never gives clinical advice, so there is nothing clinical to record. Anything clinical in a call is routed to a named person at the practice, and the summary records who it went to and when.
+
+## Triage against the practice's own written emergency protocol
+
+Triage follows the practice's own written emergency protocol, not a generic urgency model. You send the protocol your vets and front desk already work from, and the call flow is built to match it. If your protocol sends a hit-by-car dog straight in and books a limping cat for the next available slot, that is what the call produces.
+
+A generic script asks whether something is an emergency, and the owner says yes, because to them it is. Your protocol asks what your vets ask: how long ago, how much blood, is the animal weight-bearing, has it eaten. Those answers decide the outcome.
+
+### Where the protocol lives
+
+Your protocol stays yours. It is stored as the practice's configuration and versioned, so a revision made in March governs the calls taken in April. The summary records which version handled any given call, which matters when you review a triage decision later.
+
+### When a call does not fit the protocol
+
+The protocol will not cover everything. When a call falls outside it, the system does not improvise: it takes a message, marks it for a human, and routes it to the named person on your escalation list. That is the behaviour of a well-trained receptionist who knows the limits of the role.
+
+## The calls that arrive when nobody is at the desk
+
+VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — including the ones that arrive at 3am, which are the calls that decide whether an owner stays with you. A practice running one to six veterinarians with no overnight front desk has three predictable holes in phone coverage: the lunch hour, the surgery block, and the whole of the night.
+
+Each hole produces a different kind of call, and the integration handles them differently.
+
+| When the call arrives | Typical call | What Avimark receives |
+| --- | --- | --- |
+| During surgery | Refill request, appointment change, new client enquiry | Appointment or a task for the front desk, plus a summary |
+| Lunch hour | Booking, directions, insurance question | Appointment on the schedule, summary attached to the client |
+| Overnight | Possible emergency, worried owner | Triage outcome per your protocol; appointment or escalation |
+| Weekend | Everything above, at higher volume | Same as above, queued to the on-call vet where your protocol says so |
+
+### The overnight call
+
+The overnight call is the one that costs you a client permanently. An owner whose dog is deteriorating at 1am does not leave a voicemail and wait; they call the next number. Answering that call, triaging it against your protocol, and either booking it into Avimark for the morning or routing it to your on-call vet is the whole point of the integration.
+
+### The surgery-block call
+
+A vet in surgery cannot answer, and neither can the technician holding the animal. These calls are usually routine — a refill, a reschedule, a question about a bill — and they are exactly the calls that pile into a voicemail queue. Booking them directly into Avimark removes the queue rather than moving it.
+
+## Setting up the Avimark connection
+
+Setup runs in three parts: the Avimark connection, your protocol, and your escalation list. The Avimark side connects to your existing installation, so you do not change your PIMS, migrate data, or run a second system alongside it. Your practice keeps working in Avimark exactly as it does now.
+
+You will be asked for the following before calls go live.
+
+- Access details for the Avimark installation and a test client record to book against.
+- Your written emergency protocol, in whatever form it currently exists.
+- The escalation list: who gets a clinical call, at what hour, on which days.
+- Your appointment types and the doctors' columns, so bookings land in the right place.
+
+After that, calls run against your configuration and summaries start arriving. The first week is usually spent adjusting protocol wording, because the questions a vet asks out loud are not always the questions written down.
+
+### What you need on your side
+
+A working Avimark installation, a named person who owns the protocol, and a decision about which appointment types the system may book without a human. Most practices start narrow — rechecks, vaccinations, routine sick appointments — and widen the set once they trust the triage.
+
+### What you do not need
+
+No new phone number is strictly required, though many practices forward their existing line. No change to your Avimark licence, no hardware, and no second calendar to reconcile, because the booking goes into the schedule your team already reads.
+
+## How this compares to the alternatives
+
+Four realistic options exist for a practice that cannot answer every call, and they differ mainly in what reaches Avimark. The comparison below is about where the work ends up, not about which option sounds most modern.
+
+| Option | Who answers | What reaches Avimark |
+| --- | --- | --- |
+| Voicemail | Nobody | Nothing until someone listens and types it in |
+| Human answering service | An operator reading a script | A message, usually by email or fax |
+| Generic AI receptionist | A model with no veterinary protocol | A message or a booking, triaged by a general urgency model |
+| VetReception | A system running your protocol | A booking on the schedule and a written summary |
+
+The human answering service is the closest competitor on coverage, and its weakness is not the operator but the script. An operator who has never seen a veterinary protocol cannot separate a blocked cat from a cat with a hairball, and both get written down as an owner concern. Human answering services generally quote per minute or per call and their pricing is not public in a form you can compare directly, so ask for a per-call figure before comparing anything.
+
+### Where a generic AI receptionist falls short
+
+A general-purpose AI receptionist can answer a phone and take a message. It cannot follow the practice's own written emergency protocol, because it does not have one. It will book into a calendar, usually not into Avimark, and the triage it performs is a general urgency judgement rather than your clinical judgement written down.
+
+### Where VetReception is not the right answer
+
+If your practice already staffs a full overnight front desk, or your call volume is low enough that voicemail genuinely works, the integration adds a layer you do not need. If your calls are mostly clinical discussions with established clients, a human is the better answer, and the system routes them to one anyway.
+
+## What to check before you commit
+
+Ask three questions of any vendor claiming Avimark integration, including this one. Does the booking appear on the schedule, or does it arrive as a message? Whose protocol decides the triage? What does the front desk receive — a recording or a written summary?
+
+A vendor that answers "a message" to the first question is not integrated, whatever the marketing says. A vendor that answers "our protocol" to the second is not following your clinical judgement. A vendor that answers "a voicemail" to the third has moved the work rather than removed it.
+
+### Questions specific to the Avimark side
+
+These are the details that decide whether the connection is real, and they are worth putting in writing before you sign anything.
+
+- Does the booking create the client and patient record if they are new, or does it fail?
+- Which appointment types can be booked without human review?
+- What happens if Avimark is down or being updated at 3am?
+- Can the summary be attached to the client record rather than emailed separately?
+- How is a booking reversed if the triage got it wrong?
+
+Get the answers in writing, because the difference between a live connection and a batch process shows up at 3am, not in a demo.
+
+### What to measure in the first month
+
+Count the calls answered that would previously have gone to voicemail, the bookings that reached Avimark without a human retyping them, and the escalations that went to the right person at the right hour. Those three numbers tell you whether the integration is working. Revenue is not one of them, because a booking is not a payment, and no vendor can promise what an owner will spend.
+
+If you want the cost side before you talk to anyone, [veterinary practices pricing](/pricing-for-veterinary-practices/) explains how VetReception is priced, and [the calculator](/what-veterinary-practices-spend-on-this-a-calculator/) works through what missed calls cost a practice of your size.
+
+## Where Avimark sits among the PIMS options
+
+Avimark is one of several practice management systems used across independent small-animal practices, and the integration question is the same for each. If you run more than one system or are comparing them, the same call-handling logic applies to [Cornerstone](/blog/cornerstone-practice-management-phone/), [ezyVet](/blog/ezyvet-integration/), [Shepherd](/blog/shepherd-veterinary-software-integration/) and [Vetspire](/blog/vetspire-integration/).
+
+The mechanism — a booking written into the PIMS and a summary left for the front desk — does not change with the software. What changes is the connection detail: how records are matched, which fields are writable, and how the schedule is structured. Confirm those during setup rather than assume them.
+
+### If you are not on Avimark yet
+
+Practices choosing a PIMS now should treat phone integration as a selection criterion rather than an afterthought. A system that cannot accept a booking from an automated call handler will cost you front-desk hours for as long as you run it. [PIMS integration and the phone system](/blog/pims-integration-phone-system/) covers what to look for in the connection itself.
+
+### If you run Avimark and something else
+
+Some practices run Avimark for records and a separate scheduling tool. In that case the booking goes to whichever system holds the schedule, and the summary goes to the client record. Confirm which is which before setup, because a booking in the wrong system is worse than no booking at all.
+
+## The short version
+
+Avimark integration means a call answered at 3am becomes an appointment on tomorrow's schedule without anyone retyping it. Triage follows the practice's own written emergency protocol, the booking is written into the PIMS, and the front desk gets a written summary instead of a voicemail to work through. The system never gives clinical advice; clinical calls go to a named person.
+
+If that is what you need, the next step is a conversation about your protocol and your Avimark setup. If it is not, the comparison table above should tell you which of the other options fits better.
