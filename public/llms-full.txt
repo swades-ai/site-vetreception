@@ -22,6 +22,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 - [Shepherd Veterinary Software Integration: 24/7 Booking](https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/): How VetReception's Shepherd veterinary software integration answers every call, triages against your own protocol and writes the booking into Shepherd.
 - [Vet Clinic Missed Calls: What Happens and How to Stop Them](https://vetreception.swades.ai/blog/vet-clinic-missed-calls/): What a missed call costs a veterinary practice, what happens on the call you never hear, and how calls get answered, triaged and booked into the PIMS.
 - [Veterinary Answering Service: 24/7 Calls Booked Into PIMS](https://vetreception.swades.ai/blog/veterinary-answering-service/): A veterinary answering service that answers every call, triages against the practice's own written emergency protocol, and books straight into the PIMS.
+- [Veterinary Triage Protocol Phone: How Calls Get Sorted 24/7](https://vetreception.swades.ai/blog/veterinary-triage-protocol-phone/): A veterinary triage protocol phone answers every call, sorts it against the practice's own written emergency protocol, and books into the PIMS.
 - [VetReception: What Happened at One Veterinary Practice](https://vetreception.swades.ai/blog/what-happened-at-one-of-our-veterinary-practices/): A walkthrough of how one small-animal practice routed after-hours calls to VetReception, triaged against its own protocol, and booked into its PIMS.
 - [Vetspire Integration: 24/7 Vet Call Answering and Booking](https://vetreception.swades.ai/blog/vetspire-integration/): How VetReception connects to Vetspire: calls answered 24/7, triaged against the practice's own written emergency protocol, and booked straight into the PIMS.
 
@@ -77,12 +78,17 @@ https://vetreception.swades.ai/blog/prescription-refill-request-line/
 
 A prescription refill request line is the number a client calls to ask for more of a medication their pet already takes. In most veterinary practices it is not a separate line at all — it is the same number clients use for appointments, emergencies and billing, and refill requests are one of the call types that arrive on it.
 
+## Vet Clinic Missed Calls: What Happens and How to Stop Them
+https://vetreception.swades.ai/blog/vet-clinic-missed-calls/
+
+A missed call at a veterinary practice is not a message waiting to be returned. It is a client who dialled, heard nothing useful, and started looking for another number. The reason it happens is structural: the front desk is a single point of failure, and it is also the person checking in a vomiting dog, taking payment, and answering the line that is ringing right now.
+
 ## VetReception: What Happened at One Veterinary Practice
 https://vetreception.swades.ai/blog/what-happened-at-one-of-our-veterinary-practices/
 
 A three-veterinarian small-animal practice in the US had a PIMS, no overnight front desk, and a phone that went to voicemail between 6pm and 8am. After switching its after-hours line to VetReception, every call was answered, triaged against **the practice's own written emergency protocol**, and booked straight into the PIMS. The front desk arrived each morning to written summaries rather than a queue of voicemails.
 
-## Vet Clinic Missed Calls: What Happens and How to Stop Them
-https://vetreception.swades.ai/blog/vet-clinic-missed-calls/
+## Veterinary Triage Protocol Phone: How Calls Get Sorted 24/7
+https://vetreception.swades.ai/blog/veterinary-triage-protocol-phone/
 
-A missed call at a veterinary practice is not a message waiting to be returned. It is a client who dialled, heard nothing useful, and started looking for another number. The reason it happens is structural: the front desk is a single point of failure, and it is also the person checking in a vomiting dog, taking payment, and answering the line that is ringing right now.
+A veterinary triage protocol phone answers every call a practice cannot get to, sorts it against the practice's own written emergency protocol, and writes the booking into the PIMS. The sorting rule is the practice's, not a generic urgency model, so the same symptom is handled the same way at 3am as it would be at 10am by the person who wrote the protocol.
