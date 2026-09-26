@@ -12,3 +12,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 
 - [Veterinary Practices Pricing: How VetReception Is Priced](https://vetreception.swades.ai/pricing-for-veterinary-practices/): How VetReception pricing works for veterinary practices: what sets the price, what is included, what you pay today for after-hours coverage, and the FAQ.
 - [VetReception Integrations: PIMS Booking and Call Summaries](https://vetreception.swades.ai/works-with-the-software-veterinary-practices-already-run/): Which practice management systems VetReception books into, what each connection writes back, how setup runs, and what happens on a clinical call.
+
+## Blog
+
+- [AI Receptionist for Veterinary Clinics: Call Handling Guide](https://vetreception.swades.ai/blog/ai-receptionist-for-veterinary-clinics/): How an AI receptionist for veterinary clinics answers, triages against your own protocol and books into the PIMS. Setup, comparison and what to measure.
