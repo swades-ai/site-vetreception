@@ -1,0 +1,121 @@
+---
+title: "Prescription Refill Request Line: 24/7 Vet Call Handling"
+description: "How a prescription refill request line works in a veterinary practice: who answers, what gets captured, where it lands, and what still needs a veterinarian."
+pageType: "article"
+keyword: "prescription refill request line"
+schemaType: "Article"
+publishedAt: "2026-09-26"
+updatedAt: "2026-09-25"
+brand: "VetReception"
+faq:
+  - q: "Can a prescription refill request line approve a refill without a veterinarian?"
+    a: "No. A refill is a clinical decision wrapped in an administrative request, and the system is built so the clinical part goes to a person. The call is answered, the patient and medication are matched to the record, and the practice's own rule for that medication is applied. If the rule says a veterinarian has to sign off, the request is routed to a named person and the client is told when to expect an answer. The system never gives clinical advice and never approves a refill on its own authority."
+  - q: "How does the system know which refills are routine and which need an exam first?"
+    a: "It uses the practice's own rules, not a generic model. Before go-live the practice writes down its refill rules: which medications can be refilled without a vet, which need a review, and which require the pet to have been seen inside a set window. Those rules are applied on every refill call. Two practices in the same town will have different rules for the same drug, which is exactly why the rules come from the practice rather than from a script written for the average clinic."
+  - q: "What does the front desk actually receive after a refill call?"
+    a: "A written summary against the patient record, not a voicemail. It carries the patient, the medication, the dose and quantity where the client knows them, the pharmacy, and what the practice's rule says happens next. The point is that the front desk does not have to listen to a recording, find the record and reconstruct the request. The task already sits in the workflow the front desk uses, which is the difference between a message and a record entry."
+  - q: "What happens to a refill request that comes in at 3am?"
+    a: "It is answered, matched to the patient record, and queued for the morning with the practice's rule attached. A refill request at 3am is not an emergency, so it does not compete with one. The same line handles the calls that are emergencies, triaged against the practice's own written emergency protocol, and books those appointments straight into the PIMS. The refill request waits; the emergency does not."
+  - q: "How is this different from the answering service we already use?"
+    a: "An answering service takes a message. The practice still has to find the record, apply its own refill rule and call the client back, and that callback lands on the same front desk that was already behind. A service also usually works from a generic script rather than the practice's rules. The difference is what comes back at the end of the call: a message to work through, or a record entry with the practice's rule already applied. Answering service pricing is often not published, so it has to be quoted."
+  - q: "Does the refill line work with our practice management system?"
+    a: "The booking and the record entry are written into the PIMS the practice already runs. Avimark, Cornerstone, ezyVet, Shepherd and Vetspire each have a page describing what the connection reads and writes, and the integrations overview covers the rest. Setup is configured against the practice's own system rather than a generic export, so the refill request lands against the right patient record instead of in a separate queue the front desk has to reconcile."
+---
+A prescription refill request line is the number a client calls to ask for more of a medication their pet already takes. In most veterinary practices it is not a separate line at all — it is the same number clients use for appointments, emergencies and billing, and refill requests are one of the call types that arrive on it.
+
+Few practices decide to build a refill line. They end up with one because refill calls are a steady share of inbound volume and the front desk has to answer them somehow. The decision a buyer is actually making is not whether to have a refill line, but who answers it and what happens after the call ends.
+
+## What a refill call actually contains
+
+A refill call is short, repetitive, and almost never a single question. The client gives a pet name, a medication name, sometimes a dose, and a pharmacy. The person answering has to find the right patient record, confirm the medication is on file, check whether the practice's own rules require an exam or bloodwork before another fill, and decide whether a veterinarian needs to look at it before anything is approved.
+
+That last step is where refill calls stop being clerical. A refill request is a clinical decision wrapped in an administrative one. The front desk can take the request; it cannot approve it. Any system answering refill calls has to hold that line clearly.
+
+### The four things a refill call needs
+
+Getting these four right is most of the work, and getting any one of them wrong is what turns a refill call into a callback. The failure modes are specific: a household with two pets under similar names, a client who knows the brand name but not the strength, a pharmacy the practice has never sent to before.
+
+- The patient, matched to the right record — two pets in one household with similar names is the common failure.
+- The medication and, where the client knows it, the dose and quantity.
+- The pharmacy, including whether it is in-house or an outside one the practice sends to.
+- The practice's own rule for that medication: refill now, needs a vet review, or needs an exam first.
+
+Everything else on the call is confirmation. If a system cannot do those four things, it is a message pad with a voice.
+
+## Where refill requests sit against the rest of the call volume
+
+Refill calls compete with emergencies for the same phone line, and they lose. A client calling about a pet that is vomiting blood should not be behind four refill requests, and in most practices they are not — the front desk triages by ear. The problem is that the refill calls still have to be answered, and the person best at triaging an emergency is the same person picking up the refill line.
+
+This is the argument for handling refills on a line answered independently of the front desk. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own written emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+
+A refill request that arrives at 3am is not an emergency, but it is a call that gets answered, logged against the right patient, and queued for the morning rather than lost. The calls that arrive when nobody is at the desk are covered in more detail in [after hours vet phone answering](/blog/after-hours-vet-phone-answering/).
+
+## What the refill workflow looks like end to end
+
+A refill request handled well has five steps, and the practice should be able to point at each one. The steps matter because a gap at any of them is where the callback gets created — usually at step four, where a message replaces a record entry.
+
+1. The call is answered and the caller is identified as an existing client, matched to a patient record.
+2. The medication, dose and pharmacy are captured and read back to the client.
+3. The practice's rule for that medication is applied — some refills are routine, some require a veterinarian to sign off, some require the pet to be seen first.
+4. The request is written into the PIMS against the patient, not into a message queue.
+5. The front desk gets a summary it can act on: patient, medication, pharmacy, and what the practice's rule says happens next.
+
+The distinction between step four and a voicemail is the whole product. A voicemail is a second job. A record entry is a task that already sits in the workflow the front desk uses. The [PIMS integration phone system](/blog/pims-integration-phone-system/) page covers what the connection reads and writes in more detail.
+
+### Why the protocol has to be the practice's own
+
+Two practices in the same town will have different rules for the same drug. One will refill a thyroid medication for twelve months without an exam; another will require bloodwork at six. A generic urgency model cannot know which practice it is talking to, so it either over-refers everything to a vet or approves things it should not.
+
+Triage against the practice's own written emergency protocol is the same principle applied to the emergency end of the line. The refill end uses the practice's refill rules. Both come from the practice, not from a script written for the average clinic.
+
+## What the system will not do
+
+The AI never gives clinical advice. That is not a limitation to work around; it is the design. A refill request is routed to a named person when the practice's rule says a veterinarian has to decide, and the client is told when to expect an answer.
+
+It also does not approve a refill on its own authority, does not change a dose, and does not tell a client to stop or start a medication. Anything that would be a clinical judgement goes to a human with a name attached, and the summary records who it went to.
+
+### The refill calls that need a person
+
+These are the calls where the administrative wrapper comes off and a clinician has to be involved. Each one is still captured on the call, so the client is not asked to call back and repeat themselves to a different person.
+
+- A client asking whether the dose should change.
+- A client reporting a reaction to a medication already dispensed.
+- A request for a controlled substance, which in most practices has its own rule set.
+- A pet that has not been seen inside the practice's exam window for that medication.
+
+Each of these is captured, routed, and logged. None of them is answered by the system.
+
+## How this compares to the alternatives
+
+| Option | Answers at 3am | Books into PIMS | Refill rules applied | Front desk gets |
+|---|---|---|---|---|
+| Voicemail | No | No | No | A recording to work through |
+| Answering service | Usually | Rarely | Generic script | A message, often by email |
+| Front desk only | No | Yes | Yes | Nothing to hand over |
+| VetReception | Yes | Yes | Practice's own rules | A written summary |
+
+An answering service is the closest comparison and the one most practices have already tried. The difference is what comes back. A service takes a message; the practice still has to find the record, apply its own rule and call the client back. That callback is the cost, and it lands on the same front desk that was already behind.
+
+Answering service pricing is usually quoted per call or per minute and is often not published, so a practice comparing them has to ask for a quote. Our own pricing is set out on the [veterinary practices pricing](/pricing-for-veterinary-practices/) page rather than quoted per call.
+
+## What setup involves
+
+Setup is mostly the practice writing down what it already does. The refill rules, the exam windows, the medications that need a vet before a fill, and the pharmacies the practice uses all have to be captured in a form the system can apply. Practices that have a written protocol already move quickly; practices that keep it in the head of one long-serving receptionist spend the first session getting it out.
+
+The PIMS connection is configured against the practice's own system. [Avimark integration](/blog/avimark-integration/), [ezyVet integration](/blog/ezyvet-integration/), [Cornerstone practice management phone](/blog/cornerstone-practice-management-phone/), [Shepherd veterinary software integration](/blog/shepherd-veterinary-software-integration/) and [Vetspire integration](/blog/vetspire-integration/) each have their own page describing what the connection reads and writes.
+
+### What to check before you commit
+
+These are the questions that separate a working refill line from a demo. A practice that cannot answer them should get the answers in writing before signing anything.
+
+- Whether the system can match a caller to a patient record when the phone number is shared by a household with several pets.
+- Whether the practice's refill rules can be expressed as written rules, or whether they depend on a vet's judgement every time.
+- What the summary looks like in the practice's own workflow — a task, an email, a queue entry.
+- Who the clinical escalations go to, by name, at 3am.
+- What happens to a refill request when the practice is closed for a holiday.
+
+## The short version
+
+A prescription refill request line is not a separate product. It is the refill share of the calls a practice already gets, answered on a line that does not stop when the front desk does. The refill is captured against the patient, the practice's own rules decide what happens next, and anything clinical goes to a named person rather than being answered by the system.
+
+If refill volume is the reason the front desk cannot get to the phone, the fix is not a new number. It is a line that answers, applies the practice's rules, and writes the result where the front desk already works. [VetReception](/how-veterinary-practices-use-it/) is built for exactly that, and the [AI receptionist for veterinary clinics](/blog/ai-receptionist-for-veterinary-clinics/) guide covers the rest of the call types it handles.
