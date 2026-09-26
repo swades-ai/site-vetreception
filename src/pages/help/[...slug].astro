@@ -1,0 +1,12 @@
+---
+import { getCollection, render } from "astro:content";
+import Page from "../../layouts/Page.astro";
+// The knowledge base (#161, #314): each help answer the support bot can cite, at /help/<slug>/
+export async function getStaticPaths() {
+  const docs = await getCollection("docs");
+  return docs.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Page entry={entry} path={`/help/${entry.id}/`}><Content /></Page>

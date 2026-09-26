@@ -1,0 +1,10 @@
+---
+import site from "../../site.config.json";
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("posts")).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+---
+<Base title={`Blog — ${site.name}`} description={`What ${site.name} writes for ${site.vertical}.`} canonical="/blog/">
+  <h1>Blog</h1>
+  {posts.map((p) => <p><a href={`/blog/${p.id}/`}>{p.data.title}</a><br /><span class="meta">{p.data.description}</span></p>)}
+</Base>

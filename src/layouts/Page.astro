@@ -1,0 +1,30 @@
+---
+import site from "../site.config.json";
+import Base from "./Base.astro";
+import Faq from "../components/Faq.astro";
+import Waitlist from "../components/Waitlist.astro";
+interface Props { entry: { data: { title: string; description: string; pageType: string; schemaType: string; publishedAt: Date; updatedAt?: Date; faq: Array<{ q: string; a: string }> } }; path: string }
+const { entry, path } = Astro.props;
+const d = entry.data;
+const url = new URL(path, site.url).toString();
+const jsonld: unknown[] = [];
+if (d.pageType === "landing") {
+  jsonld.push({ "@context": "https://schema.org", "@type": "WebSite", name: site.name, url: site.url, description: d.description });
+  jsonld.push({ "@context": "https://schema.org", "@type": "Organization", name: site.name, url: site.url });
+} else if (d.schemaType === "Product") {
+  jsonld.push({ "@context": "https://schema.org", "@type": "Product", name: site.name, description: d.description, brand: { "@type": "Brand", name: site.name } });
+} else if (d.schemaType === "SoftwareApplication") {
+  jsonld.push({ "@context": "https://schema.org", "@type": "SoftwareApplication", name: site.name, description: d.description, applicationCategory: "BusinessApplication", url });
+} else {
+  jsonld.push({ "@context": "https://schema.org", "@type": "Article", headline: d.title, description: d.description, datePublished: d.publishedAt.toISOString().slice(0, 10), ...(d.updatedAt ? { dateModified: d.updatedAt.toISOString().slice(0, 10) } : {}), author: { "@type": "Organization", name: site.name }, publisher: { "@type": "Organization", name: site.name }, mainEntityOfPage: url });
+}
+if (d.faq.length) jsonld.push({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: d.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
+---
+<Base title={d.title} description={d.description} canonical={path} jsonld={jsonld}>
+  <h1>{d.title}</h1>
+  <p class="lede">{d.description}</p>
+  <slot />
+  <Faq faq={d.faq} />
+  <Waitlist />
+  <p class="meta">Published {d.publishedAt.toISOString().slice(0, 10)}{d.updatedAt && ` · updated ${d.updatedAt.toISOString().slice(0, 10)}`}</p>
+</Base>

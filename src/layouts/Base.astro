@@ -1,0 +1,53 @@
+---
+import site from "../site.config.json";
+interface Props { title: string; description: string; canonical: string; jsonld?: unknown[] }
+const { title, description, canonical, jsonld = [] } = Astro.props;
+const url = new URL(canonical, site.url).toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:site_name" content={site.name} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+    <style is:global>
+      :root { --ink: #1a1a1a; --muted: #5b5b5b; --line: #e6e6e6; --accent: #2a78d6; --bg: #ffffff; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
+      header, footer { border-color: var(--line); }
+      header { border-bottom: 1px solid var(--line); }
+      footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+      .wrap { max-width: 760px; margin: 0 auto; padding: 20px 20px; }
+      nav a { color: var(--ink); text-decoration: none; margin-right: 18px; }
+      nav a.brand { font-weight: 700; }
+      main h1 { font-size: 34px; line-height: 1.2; margin: 24px 0 12px; }
+      main h2 { font-size: 24px; margin: 36px 0 10px; }
+      main h3 { font-size: 19px; margin: 24px 0 8px; }
+      main a { color: var(--accent); }
+      table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 15px; }
+      th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+      .lede { color: var(--muted); font-size: 19px; margin-top: 0; }
+      .cta { display: inline-block; background: var(--ink); color: #fff !important; padding: 10px 16px; border-radius: 8px; text-decoration: none; margin: 8px 8px 8px 0; }
+      .faq details { border-top: 1px solid var(--line); padding: 10px 0; }
+      .faq summary { cursor: pointer; font-weight: 600; }
+      form.waitlist { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+      form.waitlist input { flex: 1 1 220px; padding: 10px; border: 1px solid var(--line); border-radius: 8px; font-size: 16px; }
+      form.waitlist button { padding: 10px 16px; border-radius: 8px; border: 0; background: var(--accent); color: #fff; font-size: 16px; }
+      .meta { color: var(--muted); font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <header><div class="wrap"><nav><a class="brand" href="/">{site.name}</a><a href="/blog/">Blog</a>{site.bookingUrl && <a href={site.bookingUrl}>Book a demo</a>}</nav></div></header>
+    <main class="wrap"><slot /></main>
+    <footer><div class="wrap">© {new Date().getFullYear()} {site.name} · {site.vertical} · <a href="/llms.txt">llms.txt</a></div></footer>
+  </body>
+</html>

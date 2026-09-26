@@ -1,0 +1,8 @@
+---
+import { getCollection, render } from "astro:content";
+import Page from "../layouts/Page.astro";
+const entries = await getCollection("landing");
+const entry = entries[0];
+const Content = entry ? (await render(entry)).Content : null;
+---
+{entry && Content ? <Page entry={entry} path="/"><Content /></Page> : <html><body><p>Nothing published yet.</p></body></html>}

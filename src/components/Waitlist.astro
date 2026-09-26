@@ -1,0 +1,30 @@
+---
+import site from "../site.config.json";
+const { inboundUrl, turnstileSiteKey, bookingUrl } = site;
+---
+{inboundUrl && (
+  <section id="waitlist">
+    <h2>Be first to try it</h2>
+    <form class="waitlist" method="post" action={inboundUrl} data-inbound>
+      <input type="email" name="work_email" placeholder="Work email" required />
+      <input type="text" name="company" placeholder="Company" required />
+      <input type="text" name="team_size" placeholder="Team size" />
+      <input type="hidden" name="page_url" value={Astro.url.toString()} />
+      {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>}
+      <button type="submit">Join the waitlist</button>
+    </form>
+    {bookingUrl && <p>Or <a class="cta" href={bookingUrl}>book a demo</a></p>}
+    <p class="meta" data-inbound-done hidden>Thanks — we will be in touch.</p>
+    {turnstileSiteKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+    <script>
+      for (const form of document.querySelectorAll("form[data-inbound]")) {
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const f = e.currentTarget as HTMLFormElement;
+          const r = await fetch(f.action, { method: "POST", body: new URLSearchParams(new FormData(f) as never) });
+          if (r.ok) { f.hidden = true; const d = f.parentElement?.querySelector("[data-inbound-done]") as HTMLElement | null; if (d) d.hidden = false; }
+        });
+      }
+    </script>
+  </section>
+)}

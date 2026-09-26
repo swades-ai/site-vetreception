@@ -1,0 +1,13 @@
+{
+  "name": "VetReception",
+  "vertical": "veterinary practices",
+  "url": "http://localhost:4321",
+  "stageUrl": "",
+  "live": false,
+  "positioning": "The phone answered every time, triaged to the practice's own protocol, booked into the PIMS.",
+  "summary": "VetReception answers, triages and books veterinary calls 24/7 against the practice's own protocol, writing back into the PIMS.",
+  "indexnowKey": "de3d5244badf709cb946b067bac3b200",
+  "turnstileSiteKey": "0x4AAAAAAFB3UWKMkqdvP7OX",
+  "inboundUrl": "https://studio.swades.ai/api/inbound/nf2sv9ugZbUiKJePviyez0v8aDXKtQlj",
+  "bookingUrl": ""
+}
