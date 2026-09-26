@@ -11,6 +11,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 ## Pages
 
 - [Vet Clinic Missed Calls: What They Cost and How to Stop Them](https://vetreception.swades.ai/the-problem-in-the-words-veterinary-practices-use/): Missed calls at a veterinary practice are not a front-desk failure. Here is what they cost, why they persist, and how calls get answered and booked.
+- [Veterinary Practice Phone Terms: A Working Glossary](https://vetreception.swades.ai/the-terms-veterinary-practices-use/): A working glossary of the phone terms veterinary practices use when comparing call answering vendors, with definitions, examples and the questions to ask.
 - [Veterinary Practices Pricing: How VetReception Is Priced](https://vetreception.swades.ai/pricing-for-veterinary-practices/): How VetReception pricing works for veterinary practices: what sets the price, what is included, what you pay today for after-hours coverage, and the FAQ.
 - [VetReception Integrations: PIMS Booking and Call Summaries](https://vetreception.swades.ai/works-with-the-software-veterinary-practices-already-run/): Which practice management systems VetReception books into, what each connection writes back, how setup runs, and what happens on a clinical call.
 
@@ -83,12 +84,17 @@ https://vetreception.swades.ai/blog/vet-clinic-missed-calls/
 
 A missed call at a veterinary practice is not a message waiting to be returned. It is a client who dialled, heard nothing useful, and started looking for another number. The reason it happens is structural: the front desk is a single point of failure, and it is also the person checking in a vomiting dog, taking payment, and answering the line that is ringing right now.
 
+## Veterinary Triage Protocol Phone: How Calls Get Sorted 24/7
+https://vetreception.swades.ai/blog/veterinary-triage-protocol-phone/
+
+A veterinary triage protocol phone answers every call a practice cannot get to, sorts it against the practice's own written emergency protocol, and writes the booking into the PIMS. The sorting rule is the practice's, not a generic urgency model, so the same symptom is handled the same way at 3am as it would be at 10am by the person who wrote the protocol.
+
 ## VetReception: What Happened at One Veterinary Practice
 https://vetreception.swades.ai/blog/what-happened-at-one-of-our-veterinary-practices/
 
 A three-veterinarian small-animal practice in the US had a PIMS, no overnight front desk, and a phone that went to voicemail between 6pm and 8am. After switching its after-hours line to VetReception, every call was answered, triaged against **the practice's own written emergency protocol**, and booked straight into the PIMS. The front desk arrived each morning to written summaries rather than a queue of voicemails.
 
-## Veterinary Triage Protocol Phone: How Calls Get Sorted 24/7
-https://vetreception.swades.ai/blog/veterinary-triage-protocol-phone/
+## Veterinary Practice Phone Terms: A Working Glossary
+https://vetreception.swades.ai/the-terms-veterinary-practices-use/
 
-A veterinary triage protocol phone answers every call a practice cannot get to, sorts it against the practice's own written emergency protocol, and writes the booking into the PIMS. The sorting rule is the practice's, not a generic urgency model, so the same symptom is handled the same way at 3am as it would be at 10am by the person who wrote the protocol.
+Most veterinary call answering products are sold with the same six words — answer, triage, book, integrate, summarise, escalate — and mean different things by each. Two vendors can both claim "triage" while one applies a generic urgency model and the other reads the practice's own written emergency protocol. Getting the definitions straight first is what makes a demo comparable, and it is what makes a quote comparable.

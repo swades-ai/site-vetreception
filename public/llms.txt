@@ -11,6 +11,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 ## Pages
 
 - [Vet Clinic Missed Calls: What They Cost and How to Stop Them](https://vetreception.swades.ai/the-problem-in-the-words-veterinary-practices-use/): Missed calls at a veterinary practice are not a front-desk failure. Here is what they cost, why they persist, and how calls get answered and booked.
+- [Veterinary Practice Phone Terms: A Working Glossary](https://vetreception.swades.ai/the-terms-veterinary-practices-use/): A working glossary of the phone terms veterinary practices use when comparing call answering vendors, with definitions, examples and the questions to ask.
 - [Veterinary Practices Pricing: How VetReception Is Priced](https://vetreception.swades.ai/pricing-for-veterinary-practices/): How VetReception pricing works for veterinary practices: what sets the price, what is included, what you pay today for after-hours coverage, and the FAQ.
 - [VetReception Integrations: PIMS Booking and Call Summaries](https://vetreception.swades.ai/works-with-the-software-veterinary-practices-already-run/): Which practice management systems VetReception books into, what each connection writes back, how setup runs, and what happens on a clinical call.
 
