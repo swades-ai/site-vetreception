@@ -1,0 +1,89 @@
+---
+title: "VetReception Integrations: PIMS Booking and Call Summaries"
+description: "Which practice management systems VetReception books into, what each connection writes back, how setup runs, and what happens on a clinical call."
+pageType: "integrations"
+schemaType: "WebSite"
+publishedAt: "2026-09-26"
+updatedAt: "2026-09-25"
+brand: "VetReception"
+faq:
+  - q: "Which PIMS do you integrate with?"
+    a: "AVImark, Cornerstone, ezyVet, Shepherd and Vetspire are covered directly, and each has its own page describing what the connection does on the schedule and record side. If your practice runs something else, the booking and summary path is handled the same way rather than through a separate workflow, so it is worth asking before you assume it will not work. The practical test is whether your PIMS exposes an appointment schedule we can write to and a client record we can match against. Most systems independent small-animal practices run do both."
+  - q: "Does the booking really appear in my PIMS, or do I get a message to enter myself?"
+    a: "The appointment is written into the PIMS as a booking on your schedule, with the client and patient matched to existing records where they exist. The front desk also gets a written summary of the call, which is a record of what was said and what was booked — not a voicemail to work through. The difference shows at 8am: your team opens a schedule that already reflects the overnight calls instead of listening to messages and re-keying them. If a call cannot be booked against your protocol, it is routed to a named person instead."
+  - q: "How does triage work if every practice's protocol is different?"
+    a: "You send your written emergency protocol and we map its branches to call outcomes: immediate transfer to a named person, book now, book next available, or take a message. Triage follows the practice's own written emergency protocol rather than a generic urgency model, so a practice that sends hit-by-car straight to the on-call veterinarian gets that behaviour and a practice that books it gets that instead. Nothing clinical is decided on our side — the service never gives clinical advice, and anything clinical routes to a person your practice names during setup."
+  - q: "What happens on a call that is clearly clinical?"
+    a: "It goes to a named person at your practice. The service never gives clinical advice, so the caller is not told what might be wrong with the animal or what to do about it beyond what your own protocol specifies. During setup you name who receives those calls and in what order, including after hours. This is the part practices ask about most, because the risk of an answering service improvising on a clinical question is real. The protocol you already use is the boundary, and calls outside it are transferred rather than handled."
+  - q: "How long does setup take, and what do you need from us?"
+    a: "The protocol is the long pole. You send your written emergency protocol, we map it to call outcomes, the PIMS connection is configured for the right schedule, location and provider, named people are set for clinical routing, and a test window runs against real call patterns before the line goes live after hours. Practices that already have their protocol written down move fastest, because there is nothing to draft. If your protocol lives in people's heads rather than on paper, that is worth fixing before setup rather than during it."
+  - q: "What does it cost compared with an answering service?"
+    a: "VetReception is priced for veterinary practices rather than per-seat like a general call centre, and the pricing page explains how the components work. We do not publish a single headline number here because the shape of the pricing depends on your call volume and hours. The honest comparison is against what you currently spend on after-hours coverage plus the staff time spent re-keying voicemails into the PIMS each morning. The calculator page lets you put your own numbers in rather than take ours."
+---
+## What an integration actually does here
+
+An integration is the difference between a call that was answered and an appointment that exists. VetReception answers the calls your front desk cannot get to, and the connection is what turns that answered call into a booking written into the PIMS as a real appointment on the real schedule, with the client and patient matched to existing records where they exist.
+
+The front desk gets a written summary per call instead of a voicemail to work through. That summary carries what the owner said, which branch of your protocol the call followed, and what was booked — so the morning huddle starts from a record rather than a phone message. The [PIMS integration phone system](/blog/pims-integration-phone-system/) page describes the general shape of that connection.
+
+## The systems practices already run
+
+Most independent small-animal practices in the US running one to six veterinarians already have a PIMS and no overnight front desk. The list below is built around what those practices actually run, not a hypothetical stack, and each connection uses the same booking and summary path.
+
+### AVImark
+
+AVImark is common in established small-animal practices, and the connection books into its appointment schedule so a call at 3am lands on the same calendar the morning team opens. Client matching runs against the existing record before the booking is created, which keeps duplicate owners out of the file. The [AVImark integration](/blog/avimark-integration/) page covers what changes on the schedule side.
+
+### Cornerstone
+
+Cornerstone practices tend to hold deep client and patient records, and the connection matches an inbound caller to those records before booking rather than creating a new one. Bookings land against the correct provider and appointment type so the schedule stays readable. The [Cornerstone practice management phone](/blog/cornerstone-practice-management-phone/) page covers how calls route into it.
+
+### ezyVet
+
+ezyVet practices often run multiple locations or a busy urgent-care mix, and bookings are written into the PIMS against the right location and provider rather than a default. That matters when the same client could reasonably be seen at either site. Details are on the [ezyVet integration](/blog/ezyvet-integration/) page.
+
+### Shepherd
+
+Shepherd's structured records make it straightforward to attach a call summary to the patient history alongside the appointment, so the clinical team sees the owner's own words next to the booking. The [Shepherd veterinary software integration](/blog/shepherd-veterinary-software-integration/) page describes that write-back.
+
+### Vetspire
+
+Vetspire practices get the same treatment: appointment created, client matched, summary attached to the record. The [Vetspire integration](/blog/vetspire-integration/) page has the specifics of what is written and where it appears.
+
+### Other PIMS and phone systems
+
+Where a practice runs a system not listed above, the connection is handled through the same booking and summary path rather than a separate workflow, so the behaviour your team learns does not change. The [PIMS integration phone system](/blog/pims-integration-phone-system/) page explains what the connection needs from your side. If your system is not covered directly, ask before assuming it will not work.
+
+## Setup, in order
+
+Setup is deliberately front-loaded on the protocol, because triage behaviour is the part that has to match your practice rather than a generic script. Practices that already have their protocol written down move fastest, since there is nothing to draft.
+
+1. You send your written emergency protocol — the one your veterinarians already follow.
+2. We map its branches to call outcomes: immediate transfer to a named person, book now, book next available, or take a message.
+3. The PIMS connection is configured so bookings land on the correct schedule, location and provider.
+4. Named people are set for anything clinical, since the service never gives clinical advice.
+5. A test window runs against real call patterns before the line goes live after hours.
+
+Nothing about the protocol is invented on our side. If your protocol says a hit-by-car at 2am goes straight to the on-call veterinarian, that is what happens, and if it says book the next available slot, that is what happens instead. The [veterinary triage protocol phone](/blog/veterinary-triage-protocol-phone/) page goes deeper on how protocol branches become call outcomes.
+
+## What practices use it for
+
+Three call types cover most of the volume, and each one ends differently once the integration is live.
+
+- **Emergencies after hours.** Triaged against your protocol and routed to the named on-call person, or booked into the PIMS if that is what your protocol says.
+- **Same-day sick appointments during surgery.** The call is answered while the veterinarian is in the OR, and the appointment is written into the PIMS for a slot the practice actually has.
+- **Routine requests.** Prescription refills, records requests and scheduling questions are captured and summarised rather than left as a voicemail. The [prescription refill request line](/blog/prescription-refill-request-line/) page covers that flow.
+
+After the calls, the front desk opens a written summary per call rather than working through a queue of messages. The [how veterinary practices use it](/how-veterinary-practices-use-it/) page walks through a normal week, and [what happened at one of our veterinary practices](/blog/what-happened-at-one-of-our-veterinary-practices/) is a concrete account of the same.
+
+## Where the calls come from
+
+The integration matters most in the hours when nobody is at the desk. After-hours volume is the reason most practices start here, and the [after hours vet phone answering](/blog/after-hours-vet-phone-answering/) page covers what those calls look like. Missed calls during the day are the second reason — see [vet clinic missed calls](/blog/vet-clinic-missed-calls/).
+
+If you want to compare this against what you spend now on answering coverage, the [calculator](/what-veterinary-practices-spend-on-this-a-calculator/) lays out the inputs, and [veterinary practices pricing](/pricing-for-veterinary-practices/) explains how VetReception itself is priced. Practices weighing a live answering service against this can read [veterinary answering service](/blog/veterinary-answering-service/) for the differences in what gets written back.
+
+## Start from the protocol you already have
+
+The fastest way to judge whether this fits is to look at your own written emergency protocol and ask whether a call answered against it, booked into your PIMS, and summarised for the front desk would have changed last month. The [terms veterinary practices use](/the-terms-veterinary-practices-use/) page is useful if your team describes these calls differently than we do.
+
+You can also start at the [main page](/) for the short version, or read [best software for veterinary practices](/blog/best-tools-for-veterinary-practices/) if you are comparing this against the rest of your stack.

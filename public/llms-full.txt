@@ -11,15 +11,21 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 ## Pages
 
 - [Veterinary Practices Pricing: How VetReception Is Priced](https://vetreception.swades.ai/pricing-for-veterinary-practices/): How VetReception pricing works for veterinary practices: what sets the price, what is included, what you pay today for after-hours coverage, and the FAQ.
+- [VetReception Integrations: PIMS Booking and Call Summaries](https://vetreception.swades.ai/works-with-the-software-veterinary-practices-already-run/): Which practice management systems VetReception books into, what each connection writes back, how setup runs, and what happens on a clinical call.
 
 ---
+
+## Veterinary Practices Pricing: How VetReception Is Priced
+https://vetreception.swades.ai/pricing-for-veterinary-practices/
+
+VetReception is priced per practice, not per call and not per minute. The number is set by how many phone lines ring into the practice, how many veterinarians are on the roster, and which PIMS the booking has to be written into — because each of those changes how much configuration and testing happens before the first call is answered.
 
 ## VetReception: 24/7 Vet Call Answering Into Your PIMS
 https://vetreception.swades.ai/
 
 VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own written emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
 
-## Veterinary Practices Pricing: How VetReception Is Priced
-https://vetreception.swades.ai/pricing-for-veterinary-practices/
+## VetReception Integrations: PIMS Booking and Call Summaries
+https://vetreception.swades.ai/works-with-the-software-veterinary-practices-already-run/
 
-VetReception is priced per practice, not per call and not per minute. The number is set by how many phone lines ring into the practice, how many veterinarians are on the roster, and which PIMS the booking has to be written into — because each of those changes how much configuration and testing happens before the first call is answered.
+An integration is the difference between a call that was answered and an appointment that exists. VetReception answers the calls your front desk cannot get to, and the connection is what turns that answered call into a booking written into the PIMS as a real appointment on the real schedule, with the client and patient matched to existing records where they exist.
