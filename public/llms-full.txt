@@ -7,3 +7,10 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 ## Start here
 
 - [VetReception: 24/7 Vet Call Answering Into Your PIMS](https://vetreception.swades.ai/): VetReception answers every veterinary call, triages against the practice's own written emergency protocol, and books straight into the PIMS.
+
+---
+
+## VetReception: 24/7 Vet Call Answering Into Your PIMS
+https://vetreception.swades.ai/
+
+VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own written emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
