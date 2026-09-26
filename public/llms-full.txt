@@ -20,6 +20,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 - [Avimark Integration: Booking Calls Into Avimark 24/7](https://vetreception.swades.ai/blog/avimark-integration/): How VetReception's Avimark integration turns an after-hours call into an appointment on your schedule, triaged against your own written emergency protocol.
 - [Shepherd Veterinary Software Integration: 24/7 Booking](https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/): How VetReception's Shepherd veterinary software integration answers every call, triages against your own protocol and writes the booking into Shepherd.
 - [Veterinary Answering Service: 24/7 Calls Booked Into PIMS](https://vetreception.swades.ai/blog/veterinary-answering-service/): A veterinary answering service that answers every call, triages against the practice's own written emergency protocol, and books straight into the PIMS.
+- [VetReception: What Happened at One Veterinary Practice](https://vetreception.swades.ai/blog/what-happened-at-one-of-our-veterinary-practices/): A walkthrough of how one small-animal practice routed after-hours calls to VetReception, triaged against its own protocol, and booked into its PIMS.
 - [Vetspire Integration: 24/7 Vet Call Answering and Booking](https://vetreception.swades.ai/blog/vetspire-integration/): How VetReception connects to Vetspire: calls answered 24/7, triaged against the practice's own written emergency protocol, and booked straight into the PIMS.
 
 ---
@@ -49,6 +50,11 @@ https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/
 
 VetReception's Shepherd veterinary software integration answers the calls your practice cannot get to, triages each one against the practice's own written emergency protocol, and writes the booking into Shepherd before anyone unlocks the door. The front desk gets a written summary attached to that appointment instead of a voicemail to work through.
 
+## Vet Clinic Missed Calls: What They Cost and How to Stop Them
+https://vetreception.swades.ai/the-problem-in-the-words-veterinary-practices-use/
+
+A missed call at a small-animal practice is rarely a phone nobody heard. It is a call that arrived while the two people at the front desk were checking in a euthanasia, taking payment for a dental, and answering the other line. It is a call at 7:40pm after the last appointment, and a call at 3:12am from an owner whose dog is vomiting.
+
 ## Veterinary Answering Service: 24/7 Calls Booked Into PIMS
 https://vetreception.swades.ai/blog/veterinary-answering-service/
 
@@ -64,7 +70,7 @@ https://vetreception.swades.ai/blog/vetspire-integration/
 
 VetReception connects to Vetspire so that calls your front desk cannot reach are answered, triaged and booked without a human at the phone. The connection is a booking and record-writing integration, not a clinical one: the system reads your appointment types and provider availability from Vetspire and writes a booked appointment back into the same schedule your team already works from.
 
-## Vet Clinic Missed Calls: What They Cost and How to Stop Them
-https://vetreception.swades.ai/the-problem-in-the-words-veterinary-practices-use/
+## VetReception: What Happened at One Veterinary Practice
+https://vetreception.swades.ai/blog/what-happened-at-one-of-our-veterinary-practices/
 
-A missed call at a small-animal practice is rarely a phone nobody heard. It is a call that arrived while the two people at the front desk were checking in a euthanasia, taking payment for a dental, and answering the other line. It is a call at 7:40pm after the last appointment, and a call at 3:12am from an owner whose dog is vomiting.
+A three-veterinarian small-animal practice in the US had a PIMS, no overnight front desk, and a phone that went to voicemail between 6pm and 8am. After switching its after-hours line to VetReception, every call was answered, triaged against **the practice's own written emergency protocol**, and booked straight into the PIMS. The front desk arrived each morning to written summaries rather than a queue of voicemails.
