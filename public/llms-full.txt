@@ -19,6 +19,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 - [Avimark Integration: Booking Calls Into Avimark 24/7](https://vetreception.swades.ai/blog/avimark-integration/): How VetReception's Avimark integration turns an after-hours call into an appointment on your schedule, triaged against your own written emergency protocol.
 - [Shepherd Veterinary Software Integration: 24/7 Booking](https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/): How VetReception's Shepherd veterinary software integration answers every call, triages against your own protocol and writes the booking into Shepherd.
 - [Veterinary Answering Service: 24/7 Calls Booked Into PIMS](https://vetreception.swades.ai/blog/veterinary-answering-service/): A veterinary answering service that answers every call, triages against the practice's own written emergency protocol, and books straight into the PIMS.
+- [Vetspire Integration: 24/7 Vet Call Answering and Booking](https://vetreception.swades.ai/blog/vetspire-integration/): How VetReception connects to Vetspire: calls answered 24/7, triaged against the practice's own written emergency protocol, and booked straight into the PIMS.
 
 ---
 
@@ -47,12 +48,17 @@ https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/
 
 VetReception's Shepherd veterinary software integration answers the calls your practice cannot get to, triages each one against the practice's own written emergency protocol, and writes the booking into Shepherd before anyone unlocks the door. The front desk gets a written summary attached to that appointment instead of a voicemail to work through.
 
+## Veterinary Answering Service: 24/7 Calls Booked Into PIMS
+https://vetreception.swades.ai/blog/veterinary-answering-service/
+
+A veterinary answering service takes the calls a practice cannot reach — after hours, during surgery, at three in the morning — and turns them into booked appointments instead of voicemails. VetReception answers each call, triages it against the practice's own written emergency protocol rather than a generic urgency script, writes the booking straight into the PIMS, and leaves the front desk a written summary.
+
 ## VetReception Integrations: PIMS Booking and Call Summaries
 https://vetreception.swades.ai/works-with-the-software-veterinary-practices-already-run/
 
 An integration is the difference between a call that was answered and an appointment that exists. VetReception answers the calls your front desk cannot get to, and the connection is what turns that answered call into a booking written into the PIMS as a real appointment on the real schedule, with the client and patient matched to existing records where they exist.
 
-## Veterinary Answering Service: 24/7 Calls Booked Into PIMS
-https://vetreception.swades.ai/blog/veterinary-answering-service/
+## Vetspire Integration: 24/7 Vet Call Answering and Booking
+https://vetreception.swades.ai/blog/vetspire-integration/
 
-A veterinary answering service takes the calls a practice cannot reach — after hours, during surgery, at three in the morning — and turns them into booked appointments instead of voicemails. VetReception answers each call, triages it against the practice's own written emergency protocol rather than a generic urgency script, writes the booking straight into the PIMS, and leaves the front desk a written summary.
+VetReception connects to Vetspire so that calls your front desk cannot reach are answered, triaged and booked without a human at the phone. The connection is a booking and record-writing integration, not a clinical one: the system reads your appointment types and provider availability from Vetspire and writes a booked appointment back into the same schedule your team already works from.

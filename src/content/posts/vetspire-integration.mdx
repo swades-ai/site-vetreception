@@ -1,0 +1,94 @@
+---
+title: "Vetspire Integration: 24/7 Vet Call Answering and Booking"
+description: "How VetReception connects to Vetspire: calls answered 24/7, triaged against the practice's own written emergency protocol, and booked straight into the PIMS."
+pageType: "article"
+keyword: "vetspire integration"
+schemaType: "Article"
+publishedAt: "2026-09-26"
+updatedAt: "2026-09-25"
+brand: "VetReception"
+faq:
+  - q: "Does VetReception book directly into Vetspire, or send a message for staff to enter?"
+    a: "It books directly into Vetspire. On a call the system matches the caller to an existing client and patient record, or captures a new client where none exists, then offers slots Vetspire reports as open for the relevant appointment type. The appointment is written onto the schedule your team already works from, tied to the patient and client record. The front desk also receives a written summary of the call rather than a voicemail. What the system does not write is anything clinical — no medical notes, prescriptions or treatment instructions go into the record."
+  - q: "Whose emergency protocol decides how a call is triaged?"
+    a: "Yours. During setup the practice's own written emergency protocol is turned into the decision path the system follows, so a presentation your veterinarians treat as immediate is handled as immediate and one they treat as routine is offered a scheduled slot. The system does not apply a generic urgency model or invent a threshold your veterinarians did not set. Where a call falls outside anything the protocol covers, it is routed to a named person at the practice rather than resolved by the software."
+  - q: "What happens if a caller asks a clinical question?"
+    a: "The AI never gives clinical advice. Questions about medication doses, whether a symptom is serious, or what to do about a wound are routed to a named person at the practice rather than answered by the system. That routing list — who is called, in what order, at what hour — is configured during setup. This is a deliberate design decision rather than a gap to be worked around, and it is the main reason the system can be trusted on an after-hours line without a veterinarian listening in."
+  - q: "How is pricing structured, and is there a per-call charge?"
+    a: "Pricing is set per practice rather than per call, so a busy night does not run up a meter. The detail sits on the veterinary practices pricing page. Because it is not charged by the minute, the cost does not change when a single overnight shift produces fifteen calls instead of two, which is usually the scenario practices are most worried about when they compare this against a per-minute answering service. Ask any vendor you are comparing for their pricing in writing, since some do not publish it."
+  - q: "What does setup actually require from the practice?"
+    a: "Three things: the written emergency protocol, the routing list of who gets called when and at what hour, and access to Vetspire so the integration can read schedules and write appointments. Configuration turns those into the decision path the system follows. Most practices test before going live on the main line, running real scenarios — an after-hours emergency, a routine refill, a call that should route to a person — and checking each produces the expected appointment or routing. Gaps in the protocol usually surface during that testing."
+---
+VetReception connects to Vetspire so that calls your front desk cannot reach are answered, triaged and booked without a human at the phone. The connection is a booking and record-writing integration, not a clinical one: the system reads your appointment types and provider availability from Vetspire and writes a booked appointment back into the same schedule your team already works from.
+
+That distinction matters when you are comparing options. A generic answering service takes a message and emails it to the practice. An integration writes the appointment where the rest of the day already lives, so nobody re-enters it in the morning.
+
+## What the Vetspire connection reads and writes
+
+The integration works against the same objects your staff use in Vetspire: clients, patients, appointment types, providers and the schedule itself. On an inbound call the system matches the caller to an existing client record where one exists, or captures a new client's details where it does not, then offers slots that Vetspire reports as open for the relevant appointment type.
+
+What it writes back is an appointment on the schedule, tied to the patient and client record, plus a call summary attached to that client. What it does not write is anything clinical — no notes into the medical record, no prescriptions, no treatment instructions. Those stay with your team.
+
+- Reads: client and patient records, appointment types, provider schedules, open slots.
+- Writes: a booked appointment, the new-client record where needed, and a written call summary.
+- Does not touch: medical notes, prescription records, clinical history, invoicing.
+
+The practical test is whether a booked call shows up in Vetspire in a form your team recognises without translation. If your staff have to reformat what arrives, the integration is not doing its job.
+
+## How triage is built from your protocol
+
+Triage is the part most answering services get wrong, because they apply one urgency model to every practice. VetReception is configured against the practice's own written emergency protocol — the document your veterinarians already use to decide what comes in now, what comes in today, and what can wait for a scheduled slot.
+
+During onboarding your protocol is turned into the decision path the system follows on a call. If your protocol says a hit-by-car with visible bleeding is seen immediately and a limping dog that is eating normally is offered the next available slot, that is what the call produces. The system does not invent a threshold your veterinarians did not set.
+
+Where a call falls outside anything the protocol covers, it is routed to a named person at the practice rather than resolved by the system. That routing list — who is called, in what order, at what hour — is part of setup, not something the software guesses.
+
+## The calls that arrive when nobody is at the desk
+
+The calls this is built for are the ones that arrive after hours, during surgery, and at three in the morning — including the ones that arrive at 3am, when the only options today are a voicemail box or an answering service reading a script. A practice running one to six veterinarians rarely has an overnight front desk, and the person who would normally pick up is in an operating room with gloves on.
+
+Those calls split into three groups, and each is handled differently:
+
+- Emergencies, judged against your protocol, which are booked or routed according to what your protocol says happens next.
+- Urgent-but-not-emergency calls, which are offered the earliest appropriate slot on the Vetspire schedule.
+- Routine calls — refills, records requests, appointment changes — which are captured and summarised for the front desk to action in the morning.
+
+The front desk gets a written summary of each call rather than a voicemail to work through. That is the difference between a queue of twenty messages and twenty lines of text that say who called, what they wanted, and what was already done about it.
+
+## What the system will not do
+
+The AI never gives clinical advice. If a caller asks whether a medication dose should change, whether a symptom means something serious, or what to do about a wound, the call is routed to a named person rather than answered by the system. That is a design decision, not a limitation to be worked around.
+
+It also does not replace your staff, and it does not promise revenue outcomes. What it does is answer calls that would otherwise go to voicemail, apply your protocol to them, and put the result where your team can see it. Anything that requires a veterinarian's judgement leaves the system and goes to a human.
+
+## How this compares to the alternatives
+
+| Option | Answers overnight | Triages on your protocol | Books into Vetspire | Front desk gets |
+|---|---|---|---|---|
+| Voicemail | No | No | No | A recording to listen to |
+| Traditional answering service | Usually | No — generic script | Rarely | A message, often by email |
+| VetReception | Yes | Yes | Yes | A written summary per call |
+
+The comparison that matters most is the second column. An answering service that reads a script cannot know that your practice treats a particular presentation as urgent and another as routine, because that judgement lives in your protocol, not in a call centre's manual. Where a service does not publish its pricing, that pricing is not public, and you should ask for it in writing before comparing totals.
+
+If you want the wider picture of how this fits alongside other software, see [VetReception integrations: PIMS booking and call summaries](/works-with-the-software-veterinary-practices-already-run/). Practices on other systems can read the equivalent detail for [Avimark](/blog/avimark-integration/) and [ezyVet](/blog/ezyvet-integration/).
+
+## What setup involves
+
+Setup has three inputs from you and one from us. From you: the written emergency protocol, the routing list of who gets called when and at what hour, and access to Vetspire so the integration can read schedules and write appointments. From us: the configuration that turns those into the decision path the system follows.
+
+Expect to test it before it goes live on your main line. The usual approach is to run a set of real scenarios past the configured system — an after-hours emergency, a routine refill, a call that should route to a person — and check that each one produces the appointment or the routing you expected. If your protocol has gaps, testing finds them, and closing those gaps is worth doing regardless of whether you use this system.
+
+Pricing for veterinary practices is set per practice rather than per call, and the detail is on the [veterinary practices pricing](/pricing-for-veterinary-practices/) page. There is no per-minute meter to watch during a busy night.
+
+## What to check before you commit
+
+Ask four things of any vendor claiming a Vetspire integration. First, does a booked appointment appear on the Vetspire schedule itself, or in a separate portal your team has to check? Second, whose protocol drives triage — yours or theirs? Third, what happens to a call the system cannot classify? Fourth, what does the front desk actually receive in the morning?
+
+A vendor that answers all four specifically is doing the work. A vendor that answers in generalities is likely taking a message and emailing it. The [after hours vet phone answering](/blog/after-hours-vet-phone-answering/) page walks through what a night of calls looks like end to end, and [how veterinary practices use it](/how-veterinary-practices-use-it/) covers the day-to-day pattern across a week.
+
+## The short version
+
+VetReception answers every call a veterinary practice cannot get to, triages it against the practice's own written emergency protocol rather than a generic script, books the appointment straight into Vetspire, and leaves the front desk a written summary instead of a voicemail to work through. It never gives clinical advice, and anything clinical goes to a named person.
+
+If you are weighing this against an answering service, the deciding question is not whether calls get answered — most services do that. It is whether the call produces a booked appointment on your Vetspire schedule and a summary your team can act on without listening to anything.
