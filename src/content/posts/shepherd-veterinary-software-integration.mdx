@@ -1,0 +1,115 @@
+---
+title: "Shepherd Veterinary Software Integration: 24/7 Booking"
+description: "How VetReception's Shepherd veterinary software integration answers every call, triages against your own protocol and writes the booking into Shepherd."
+pageType: "article"
+keyword: "shepherd veterinary software integration"
+schemaType: "Article"
+publishedAt: "2026-09-26"
+updatedAt: "2026-09-25"
+brand: "VetReception"
+faq:
+  - q: "Does VetReception work with Shepherd specifically, or only with on-premise PIMS?"
+    a: "Shepherd is a cloud PIMS with an API, and the integration books through that API rather than through a script running on a computer in your practice. That means the connection does not depend on a machine being switched on, and it does not break when Shepherd updates its interface. We map your appointment types, providers and open slots from your Shepherd instance, then write bookings against them. If your practice runs a different system, the same mechanism applies to the other PIMS connections listed on our integrations page, and the setup steps are broadly the same."
+  - q: "How does the triage decide what counts as an emergency?"
+    a: "It follows the practice's own written emergency protocol, not a generic urgency model. You give us the document your veterinarians already use to decide what comes in immediately, what comes in within hours, and what can be scheduled. We encode it as a decision tree, and every call walks that tree. The result is that a blocked cat is handled the same way at 3am as it would be at 11am by your most experienced receptionist, because both are following the same written rule. Where your protocol names a person for a category, the call routes to that person."
+  - q: "What happens if the system is unsure what the caller means?"
+    a: "It stops and routes to a named person. The system never gives clinical advice, so anything touching on symptoms, medication safety or what a condition means goes to a human at the practice. The same applies when a caller is distressed, incoherent, or describing something the protocol does not cover. In those cases the call is transferred rather than guessed at, and the summary records that it was transferred and why. A wrong booking is recoverable; a wrong clinical judgement on a recorded line is not, so the design leans towards escalation."
+  - q: "Will it create duplicate client records in Shepherd?"
+    a: "It matches on the phone number the caller gives. If that number matches an existing Shepherd client, the booking attaches to that record. If it does not match, the system creates a new client record rather than guessing at a near-match on name or address, because a duplicate record is straightforward to merge while a booking filed against the wrong pet is not. You can set the matching rules during setup, and most practices choose to review new client records created overnight as part of the morning check before the first appointment."
+  - q: "What does the front desk actually receive?"
+    a: "A written summary attached to the appointment, not a voicemail. It records who called, what the animal was doing, what was agreed, and what the owner was told would happen next. The front desk reads it in seconds rather than listening to a recording, and the note sits with the appointment in Shepherd so the technician picking up the case sees it too. Nothing depends on someone remembering to check a separate inbox or a phone system's message bank, which is where most overnight messages get lost."
+  - q: "How is pricing structured?"
+    a: "Pricing is based on call volume and the number of practice locations rather than a flat per-seat fee, so a one-veterinarian practice and a six-veterinarian practice do not pay the same. There is no per-booking charge, which matters if your call volume is seasonal. The full structure, including how the tiers move as volume grows, is on the veterinary practices pricing page. We do not quote a figure here because the right tier depends on your call volume, and the page sets out how that is measured."
+---
+VetReception's Shepherd veterinary software integration answers the calls your practice cannot get to, triages each one against the practice's own written emergency protocol, and writes the booking into Shepherd before anyone unlocks the door. The front desk gets a written summary attached to that appointment instead of a voicemail to work through.
+
+That is the whole mechanism. What follows is what the connection reads from Shepherd, what it writes back, how triage is configured from a document you already have, what the system refuses to do, and what to verify before it takes the live line.
+
+## What the Shepherd connection reads and writes
+
+Shepherd is a cloud PIMS with an API, so this is a connection to your instance rather than a script running on a back-office computer. Nothing depends on a machine being switched on overnight, and the connection does not break when Shepherd changes its interface.
+
+On the read side, VetReception pulls your appointment types, your provider list and your open slots. On the write side, a booking lands in Shepherd with the client record matched or created, the patient attached to that client, the appointment type set, the provider assigned where your rules name one, and the visit reason recorded in the owner's own words.
+
+### The fields a booking carries
+
+Every booking written into Shepherd carries the same set of fields, which is what makes the morning handover predictable rather than a pile of one-off notes.
+
+- Client record, matched on the phone number the caller gives, or created new when there is no match.
+- Patient attached to that client record.
+- Appointment type, drawn from the types your Shepherd instance exposes.
+- Provider, assigned only where your rules name one for that appointment type.
+- Visit reason in the owner's phrasing, plus the call summary attached to the appointment.
+
+A duplicate client record is straightforward to merge. A booking filed against the wrong pet is not, so the system creates a new record rather than guessing at a near-match on name or address. You set the matching rules during setup, and most practices review new client records created overnight as part of the morning check.
+
+## How triage is built from your protocol
+
+Triage follows the practice's own written emergency protocol, not a generic urgency model trained on calls in general. You supply the document your veterinarians already use to decide what comes in immediately, what comes in within hours, and what can wait for a scheduled slot. We encode it as the decision tree the system walks on every call.
+
+If your protocol says a blocked cat is seen immediately and a limping dog with no swelling is offered a next-day slot, that is what happens, identically at 11am and at 3am. The protocol is the artefact doing the work; the integration is what makes it run without a person reading it aloud.
+
+### Three calls, three outcomes
+
+A caller describes a dog that has eaten a bottle of ibuprofen. The system asks the questions your protocol specifies — weight, how much was eaten, when — classifies the call at the urgency level your protocol assigns, and either offers the earliest matching slot or routes to the on-call veterinarian if your protocol says that presentation goes straight to a person.
+
+A caller wants a nail trim. The system books it into a routine slot and does not wake anyone up.
+
+A caller is crying and not making sense. The system stops the script and routes to a named person, because no decision tree handles that well.
+
+## The calls that arrive when nobody is at the desk
+
+The calls that matter most are the ones nobody in the building can take — including the ones that arrive at 3am, and the ones that arrive while your veterinarian is in surgery with both hands inside a patient. Those are the calls where a voicemail becomes a complaint and a complaint becomes a review.
+
+A practice running one to six veterinarians with no overnight front desk has a specific problem: the phone is the only door, and it is locked for fourteen hours a day. An answering service takes a message. A voicemail takes a message. Neither books anything, and both leave the morning team working backwards through a list of people who have already been waiting nine hours. The mechanics of that are covered in [after hours vet phone answering](/blog/after-hours-vet-phone-answering/).
+
+### Why a summary beats a recording
+
+A voicemail is a recording someone has to listen to, interpret and transcribe into Shepherd. A written summary is a structured note attached to the appointment: who called, what the animal was doing, what was agreed, and what the owner was told would happen next. The front desk reads it in fifteen seconds instead of listening to four minutes of a distressed owner, and the technician who picks up the case sees the same note in Shepherd rather than a message bank nobody checked.
+
+## What the system will not do
+
+The AI never gives clinical advice. It does not tell an owner what is wrong with the animal, whether a medication is safe, or what a symptom means. Anything clinical is routed to a named person at the practice — the on-call veterinarian, the practice manager, whoever your protocol names for that category.
+
+It also does not replace your staff. It answers the calls your staff cannot physically answer, which is a smaller and more honest claim. Your receptionists still handle the people standing in front of them, the insurance questions, the euthanasia conversations and everything that needs a human who knows the client. The [AI receptionist for veterinary clinics](/blog/ai-receptionist-for-veterinary-clinics/) page lists the call types the system declines in more detail.
+
+## How this compares to the alternatives
+
+| Option | Answers at 3am | Books into Shepherd | Triage basis |
+|---|---|---|---|
+| Voicemail | No | No | None |
+| Human answering service | Usually | Rarely, and often by fax or email | Their script |
+| Generic AI receptionist | Yes | Sometimes, via calendar only | Generic urgency model |
+| VetReception | Yes | Yes, via the Shepherd API | The practice's own written protocol |
+
+The row that matters is the last column. A generic system that books into a calendar rather than Shepherd leaves your team to re-enter every appointment, which is where the time saving quietly disappears. The same mechanism applies across the other systems on our [integrations page](/works-with-the-software-veterinary-practices-already-run/), including [Avimark](/blog/avimark-integration/).
+
+## What setup involves
+
+Setup is a connection to Shepherd plus a protocol document. You give us API access to your Shepherd instance, we map your appointment types and providers, and we encode your written emergency protocol as the triage tree. Most of the work on your side is the protocol document itself — if it exists in a form a new associate could follow, it is ready to encode.
+
+You test it before it goes live. We route calls to it in a controlled way, you read the summaries and check the bookings in Shepherd, and you adjust the protocol where the system made a call you would not have made. Only then does it take the live line.
+
+### What to check before you commit
+
+Five things decide whether the rollout is smooth or a month of corrections. Work through them before the connection goes live rather than after the first weekend.
+
+- Whether your Shepherd instance exposes the appointment types you actually use, or only a subset.
+- Who is named as the clinical escalation contact for each hour of the day, including the hours nobody wants.
+- Whether your written protocol covers the presentations you get most often, or only the dramatic ones.
+- How your team wants duplicate client records handled when a caller's number does not match.
+- What happens to a booking when the owner changes their mind mid-call.
+
+Each of these is a decision your practice makes, not a setting we choose for you. The escalation rota in particular is worth writing down properly, because a protocol that names a person for daytime hours and nobody for 4am will route clinical calls into a void.
+
+## Pricing
+
+Pricing for veterinary practices is based on call volume and the number of locations rather than a flat per-seat fee, so a single-veterinarian practice and a six-veterinarian practice do not pay the same. The full structure is set out on the [veterinary practices pricing](/pricing-for-veterinary-practices/) page, including how the tiers move as call volume grows.
+
+There is no per-booking charge, which matters if your call volume is seasonal — the summer emergency season does not cost you more per call than February. We do not quote a figure on this page because the right tier depends on your volume, and the pricing page sets out how that is measured.
+
+## The short version
+
+If you run Shepherd and calls arrive when nobody is at the desk, the integration answers them, triages them against the practice's own written emergency protocol, and writes the booking into Shepherd before your team arrives. The front desk gets a summary instead of a voicemail. The system never gives clinical advice, and it does not replace your staff — it covers the hours they cannot.
+
+To see how practices use it day to day, the [how veterinary practices use it](/how-veterinary-practices-use-it/) page walks through the call types and what gets written back.
