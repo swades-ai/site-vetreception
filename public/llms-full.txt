@@ -20,6 +20,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 - [Avimark Integration: Booking Calls Into Avimark 24/7](https://vetreception.swades.ai/blog/avimark-integration/): How VetReception's Avimark integration turns an after-hours call into an appointment on your schedule, triaged against your own written emergency protocol.
 - [Prescription Refill Request Line: 24/7 Vet Call Handling](https://vetreception.swades.ai/blog/prescription-refill-request-line/): How a prescription refill request line works in a veterinary practice: who answers, what gets captured, where it lands, and what still needs a veterinarian.
 - [Shepherd Veterinary Software Integration: 24/7 Booking](https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/): How VetReception's Shepherd veterinary software integration answers every call, triages against your own protocol and writes the booking into Shepherd.
+- [Vet Clinic Missed Calls: What Happens and How to Stop Them](https://vetreception.swades.ai/blog/vet-clinic-missed-calls/): What a missed call costs a veterinary practice, what happens on the call you never hear, and how calls get answered, triaged and booked into the PIMS.
 - [Veterinary Answering Service: 24/7 Calls Booked Into PIMS](https://vetreception.swades.ai/blog/veterinary-answering-service/): A veterinary answering service that answers every call, triages against the practice's own written emergency protocol, and books straight into the PIMS.
 - [VetReception: What Happened at One Veterinary Practice](https://vetreception.swades.ai/blog/what-happened-at-one-of-our-veterinary-practices/): A walkthrough of how one small-animal practice routed after-hours calls to VetReception, triaged against its own protocol, and booked into its PIMS.
 - [Vetspire Integration: 24/7 Vet Call Answering and Booking](https://vetreception.swades.ai/blog/vetspire-integration/): How VetReception connects to Vetspire: calls answered 24/7, triaged against the practice's own written emergency protocol, and booked straight into the PIMS.
@@ -71,12 +72,17 @@ https://vetreception.swades.ai/blog/vetspire-integration/
 
 VetReception connects to Vetspire so that calls your front desk cannot reach are answered, triaged and booked without a human at the phone. The connection is a booking and record-writing integration, not a clinical one: the system reads your appointment types and provider availability from Vetspire and writes a booked appointment back into the same schedule your team already works from.
 
+## Prescription Refill Request Line: 24/7 Vet Call Handling
+https://vetreception.swades.ai/blog/prescription-refill-request-line/
+
+A prescription refill request line is the number a client calls to ask for more of a medication their pet already takes. In most veterinary practices it is not a separate line at all — it is the same number clients use for appointments, emergencies and billing, and refill requests are one of the call types that arrive on it.
+
 ## VetReception: What Happened at One Veterinary Practice
 https://vetreception.swades.ai/blog/what-happened-at-one-of-our-veterinary-practices/
 
 A three-veterinarian small-animal practice in the US had a PIMS, no overnight front desk, and a phone that went to voicemail between 6pm and 8am. After switching its after-hours line to VetReception, every call was answered, triaged against **the practice's own written emergency protocol**, and booked straight into the PIMS. The front desk arrived each morning to written summaries rather than a queue of voicemails.
 
-## Prescription Refill Request Line: 24/7 Vet Call Handling
-https://vetreception.swades.ai/blog/prescription-refill-request-line/
+## Vet Clinic Missed Calls: What Happens and How to Stop Them
+https://vetreception.swades.ai/blog/vet-clinic-missed-calls/
 
-A prescription refill request line is the number a client calls to ask for more of a medication their pet already takes. In most veterinary practices it is not a separate line at all — it is the same number clients use for appointments, emergencies and billing, and refill requests are one of the call types that arrive on it.
+A missed call at a veterinary practice is not a message waiting to be returned. It is a client who dialled, heard nothing useful, and started looking for another number. The reason it happens is structural: the front desk is a single point of failure, and it is also the person checking in a vomiting dog, taking payment, and answering the line that is ringing right now.
