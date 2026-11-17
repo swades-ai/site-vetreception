@@ -1,0 +1,88 @@
+---
+title: "Veterinary Practices Use VetReception: Calls, Triage, PIMS"
+description: "How veterinary practices use VetReception: every call answered, triaged against the practice's own written emergency protocol, booked into the PIMS."
+pageType: "use_case"
+schemaType: "Article"
+publishedAt: "2026-11-17"
+updatedAt: "2026-11-17"
+brand: "VetReception"
+faq:
+  - q: "How is this different from the answering service we already pay for?"
+    a: "An answering service takes a message. VetReception triages against the practice's own written emergency protocol, books the appointment straight into the PIMS during the call, and sends the front desk a written summary rather than a voicemail. The practical difference shows up the next morning: with a service, someone still has to listen to messages and convert them into appointments. With VetReception, the appointments are already on the schedule and the summaries are already written. The triage basis is also different — a service works from a generic urgency script, while this works from the document your veterinarians already use."
+  - q: "Does the AI tell callers what to do about their pet?"
+    a: "No. The AI never gives clinical advice. It answers the call, applies the practice's own written emergency protocol to decide whether the case is seen tonight or booked into the next available slot, and books it. Anything clinical — a dosage question, a wound, a pet that has eaten something it should not have — is routed to a named person at the practice rather than answered by the system. You supply the list of named people and the hours each is reachable during setup. The system's scope is answering, sorting and booking."
+  - q: "What happens if our protocol changes?"
+    a: "The behaviour follows the document. Triage is not a fixed model trained on generic veterinary urgency; it is applied against the practice's own written emergency protocol, which you supply. When the protocol changes — a new rule about when a limping dog is seen, a change to what counts as an emergency after midnight — the configuration changes with it. Practices typically review the protocol at the same time they review their own front-desk procedures. There is no retraining period and no model to rebuild."
+  - q: "Do we need a PIMS for this to work?"
+    a: "Yes. Booking is written into the PIMS, so a practice running entirely on paper is not a fit. For practices with a system in place, the appointment appears where the rest of the day's appointments appear, with the client and patient attached, rather than in a separate calendar the desk has to reconcile. The integrations page lists the practice management systems covered. If your PIMS is not on that list, that is worth raising before you go further, because booking into the PIMS is the part that removes the front desk's workload."
+  - q: "What does it cost?"
+    a: "Pricing is quoted per practice rather than listed, because it depends on call volume and how many locations are on the line. The veterinary practices pricing page explains how the quote is built and what is included. There is no per-minute meter on triage or booking, so a long call about a complicated case does not cost more than a short one. If you want a figure for your own practice, the quote process starts with your call volume and your location count."
+  - q: "Does this replace our front desk staff?"
+    a: "No. The desk still checks clients in, takes payment, handles walk-ins, and makes the judgement calls that need a person in the building. What changes is that the desk stops being the phone queue. Calls that arrive during surgery, during a check-in, or at 3am are answered and booked without anyone leaving the room. The written summary that arrives afterwards replaces the voicemail backlog, which is usually the part of the day staff resent most. The headcount question is a separate one, and it is yours to answer."
+---
+
+<span data-studio-release="2287b38e039797c96ae28b5b9b3e9beab5bcc45ce0bb26744a8fcae0662af6ef" hidden></span>
+## The situation, in the words practices use
+
+The calls that hurt are not the routine ones. They are the ones that arrive while the veterinarian is in surgery, while the front desk is checking in a euthanasia, or at 3am when nobody is in the building. A practice running one to six veterinarians with a PIMS and no overnight front desk has no third option: the phone rings out, the caller dials the next clinic, and the record of that call is a voicemail nobody has time to work through the next morning.
+
+Owners describe this in the same handful of ways. "We miss calls during surgery." "After hours goes to a machine." "The voicemail is a mess by Monday." None of those are staffing failures. They are the predictable result of a phone line that requires a human to be free at the exact moment a client calls.
+
+## What happens today
+
+Most practices patch this with one of three things, and each has a specific failure mode.
+
+**Voicemail.** The caller hears a recording, leaves a name and a number, and hangs up. If the pet is vomiting or the dog is limping, the owner has no idea whether to wait until morning or drive to the emergency hospital forty minutes away. Many do not leave a message at all.
+
+**An answering service.** A human in a call centre picks up. They can take a message and read a script. They cannot see your schedule, they cannot write into your PIMS, and they are working from a generic urgency model rather than your protocol. The message arrives as a voicemail or an email that the front desk still has to convert into an appointment.
+
+**The front desk absorbing it.** Someone answers between clients, puts the caller on hold, and comes back. This works until the waiting room fills, and then it stops working without warning.
+
+## What happens with VetReception
+
+VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own written emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+
+The triage step is the part that differs from an answering service. Before go-live, the practice supplies its own written emergency protocol — the same document the veterinarians already use to decide what is seen tonight and what is seen tomorrow. The call is matched against that document. A practice that wants every hit-by-car seen immediately gets that. A practice that wants a limping dog booked into the next available slot gets that instead. [Emergency vet call triage](/blog/emergency-vet-call-triage/) walks through how the matching works on a live call.
+
+Booking is written into the PIMS, not into a separate calendar. The appointment appears where the rest of the day's appointments appear, with the client and patient attached. See [VetReception integrations](/works-with-the-software-veterinary-practices-already-run/) for the practice management systems this covers, including [Avimark integration](/blog/avimark-integration/) and [Shepherd veterinary software integration](/blog/shepherd-veterinary-software-integration/).
+
+The AI never gives clinical advice. Anything clinical — a dosage question, a wound that needs eyes on it, a pet that has eaten something it should not have — is routed to a named person at the practice rather than answered. The system's job is to answer, to sort by the practice's own rules, and to book. It is not to practise.
+
+Every call ends with a written summary: who called, what the pet was doing, which protocol line applied, and what was booked. That summary goes to the front desk. It is not a voicemail to be listened to and transcribed.
+
+## Before and after
+
+| | Today | With VetReception |
+|---|---|---|
+| Call at 3am | Rings out or hits a machine | Answered, triaged against the practice's own written emergency protocol |
+| Call during surgery | Front desk interrupts a check-in | Answered, booked or routed without leaving the room |
+| Triage basis | Generic urgency script | The practice's own written emergency protocol |
+| Booking | Message the desk converts later | Written into the PIMS during the call |
+| Handover | Voicemail to work through | Written summary with the protocol line and the booking |
+| Clinical questions | Whoever picks up | Routed to a named person; the AI never gives clinical advice |
+
+## What it does not do
+
+It does not replace the front desk. The desk still checks clients in, takes payment, handles the walk-ins, and makes the judgement calls that need a person standing in the building. What changes is that the desk stops being the phone queue.
+
+It does not make clinical decisions. The protocol is the practice's, written by the practice, and the system applies it. If the protocol changes, the behaviour changes.
+
+It does not work without a PIMS. Booking is written into the PIMS, so a practice running entirely on paper is not a fit.
+
+## What to have ready before go-live
+
+Three things, and the first is the one that matters.
+
+1. The written emergency protocol, in whatever form it already exists — a Word document, a laminated sheet at the desk, a page in the practice manual.
+2. Access details for the PIMS, so appointments can be written in.
+3. The list of named people clinical calls route to, with the hours each is reachable.
+
+Setup is a configuration exercise, not a build. The practice is not asked to invent a triage model; it is asked to hand over the one it already uses.
+
+## Cost
+
+Pricing is per practice and depends on call volume and how many locations are on the line, so it is quoted rather than listed. [Veterinary practices pricing](/pricing-for-veterinary-practices/) sets out how the quote is built and what is included. There is no per-minute meter on triage or booking.
+
+## Where to read next
+
+[After hours vet phone answering](/blog/after-hours-vet-phone-answering/) covers the overnight case in detail. [AI receptionist for veterinary clinics](/blog/ai-receptionist-for-veterinary-clinics/) covers the call-handling mechanics. If the question is whether this fits a practice of your size, start with [VetReception](/).
