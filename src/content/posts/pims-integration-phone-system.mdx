@@ -1,0 +1,108 @@
+---
+title: "PIMS Integration Phone System: What It Must Read and Write"
+description: "A PIMS integration phone system answers calls and books into your practice software. What the connection must read and write, and how triage works."
+pageType: "article"
+keyword: "pims integration phone system"
+schemaType: "Article"
+publishedAt: "2026-11-17"
+updatedAt: "2026-11-16"
+brand: "VetReception"
+faq:
+  - q: "Does the system book directly into my PIMS, or does it send a message my staff has to enter?"
+    a: "It books directly. The connection reads your schedule — provider availability, appointment types, durations — and writes the appointment into the PIMS during the call, so the schedule your team opens in the morning already contains the booking. The front desk receives a written summary in the client record rather than a voicemail or an email to transcribe. If a vendor's answer to this question is \"we send you a notification,\" that is a message queue, not an integration, and your staff still does the typing."
+  - q: "How does triage work if my practice's emergency protocol is different from everyone else's?"
+    a: "Triage is built from your practice's own written emergency protocol. You send the document; the questions asked on the call, their order, and the routing decision at the end follow what your veterinarians agreed. A blocked cat and a limping dog with a normal appetite are sorted the way your protocol sorts them, not by a generic urgency model. If your protocol changes, the configuration changes with it. Practices that do not have the protocol written down need to write it first, which is worth doing anyway."
+  - q: "Will the system give clinical advice to my clients?"
+    a: "No. The system never gives clinical advice. Anything clinical — a dosage question, a symptom description that needs a veterinarian's judgement, an owner asking whether to give medication they have at home — is routed to a named person on the list your practice provides. The system's role is to answer, triage against your protocol, book the appointment and route the clinical questions to the right human with the right context. It does not answer as a veterinarian, and it does not attempt to."
+  - q: "What does it cost compared to a human answering service?"
+    a: "VetReception is priced per practice rather than per call, so volume does not change the bill. The structure is on the veterinary practices pricing page. Human answering services typically quote per minute or per call after a consultation, and their rates are not public, so you cannot compare them to a published number without requesting a quote. When you do, compare on total monthly cost at your actual call volume, not on the headline rate — overnight and weekend minutes are usually priced differently."
+  - q: "Which PIMS systems does it work with?"
+    a: "The common small-animal systems are covered, including Avimark, Cornerstone, ezyVet, Shepherd and Vetspire. Each connection reads and writes a specific set of fields, and the integrations page lists what each one touches. If your practice runs something else, ask before you go further — a phone system that answers well but cannot write to your software leaves your staff doing the entry, which is most of the work you were trying to remove. The integration list is the first question, not the last."
+---
+
+<span data-studio-release="3e61b060dfcfabd6ba4db7b97fd2e77df161a1fcaf04a85d18469c2c51753975" hidden></span>
+A PIMS integration phone system answers the call and creates the appointment inside the practice management software your team already has open. VetReception does that on every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triaging against the practice's own written emergency protocol rather than a generic script, and leaving the front desk a written summary instead of a voicemail to work through.
+
+## What "integration" has to mean to be worth anything
+
+Most products that call themselves a phone system integration do one of two things: they email you a message, or they push a contact record. Neither closes the loop. A booking that lands in an inbox is still a booking your receptionist has to type into the PIMS, and the typing is where the double-booking, the wrong client record and the lost after-hours call come from.
+
+A real integration reads the schedule and writes to it. On a call, the system needs to know which doctor is in surgery until 2pm, which appointment types are 15 minutes and which are 40, which client record matches the phone number that just rang, and which patient is attached to that client. Then it needs to write the appointment back so the schedule your team sees at 8am is the schedule that already exists.
+
+That is the difference between a message and a booking. Everything below assumes the second.
+
+## The four things a PIMS connection has to read and write
+
+Before you evaluate any vendor, ask what their connection touches. A useful answer names specific fields, not "full integration."
+
+- **Client and patient lookup by caller ID.** The call arrives, the system matches the number to an existing client, and the patient list comes back. If the number is new, it captures the new-client details your intake form requires.
+- **Appointment type and duration.** Your 15-minute nail trim and your 40-minute sick visit are not interchangeable. The connection has to respect the durations your practice set, not a default.
+- **Provider and resource availability.** Which veterinarian, which room, which ultrasound block. A booking that ignores provider availability creates the exact conflict the front desk spends the morning untangling.
+- **The write-back.** The appointment is created in the PIMS, not queued for approval, so the schedule is correct before anyone arrives.
+
+Read access alone is not enough, and write access without read access produces conflicts. You need both directions. The [VetReception integrations](/works-with-the-software-veterinary-practices-already-run/) page lists which fields each PIMS connection touches.
+
+## Triage follows your protocol, not a script
+
+A generic urgency model asks "is this an emergency?" and sorts calls into buckets. Your practice already has a written emergency protocol — the one your veterinarians agreed on, the one that says a blocked cat comes in now and a limping dog with a normal appetite can wait until morning. That document is the triage logic.
+
+VetReception builds triage from the practice's own written emergency protocol. The questions asked on the call are the questions in your protocol, in your order, and the routing decision at the end is the one your protocol specifies. If your protocol says a hit-by-car with visible bleeding goes to the on-call veterinarian's mobile immediately, that is what happens, not a message left for the morning.
+
+The system never gives clinical advice. Anything that turns clinical — a dosage question, a "should I give him the medication I have at home," a symptom description that needs a veterinarian's judgement — is routed to a named person on your list. The system's job is to get the call to the right human with the right information, not to answer as one. For a deeper look at how triage decisions are built, see [veterinary triage protocol phone](/blog/veterinary-triage-protocol-phone/).
+
+## The calls that arrive when nobody is at the desk
+
+Independent practices running one to six veterinarians rarely staff an overnight front desk. The calls still come. A practice that closes at 6pm and opens at 8am has fourteen hours of unanswered phone every weekday, plus the weekend.
+
+The calls that arrive in that window are not a random sample of your daytime volume. They skew toward the ones that matter: the post-surgical patient whose owner is worried at 11pm, the new client who found you on a search at 3am and will book with whoever answers, the prescription refill request that would have taken thirty seconds, including the ones that arrive at 3am and during surgery.
+
+During surgery is the harder case, because the front desk is staffed — the person is just scrubbed in. A phone system that only covers after hours leaves that gap open. The calls that ring through while the team is in an operating room are the same calls, and they need the same answer. The [after hours vet phone answering](/blog/after-hours-vet-phone-answering/) page walks through how that window is handled call by call.
+
+## What the front desk gets in the morning
+
+A voicemail is a task. A written summary is a record. The difference is whether your receptionist spends the first hour of the day listening to messages and reconstructing what happened, or reading a summary that already says who called, what the owner described, which protocol branch was taken, and what was booked.
+
+The summary is written into the PIMS alongside the appointment, so the client record, the appointment and the call note live in the same place. When the owner arrives, the history is there. When the veterinarian picks up the chart, the reason for the visit is there.
+
+This is the part practices underestimate when they compare vendors on price. The cost of a missed call is not the call — it is the fifteen minutes of reconstruction that follows it, multiplied by every call that came in overnight.
+
+## How this compares to the alternatives
+
+| Option | Answers at 3am | Triages on your protocol | Books into the PIMS | Front desk gets |
+|---|---|---|---|---|
+| Voicemail | No | No | No | A message to return |
+| Human answering service | Usually | Only if you write and maintain the script with them | Rarely; usually a message | A message, sometimes a form |
+| Generic AI receptionist | Yes | Generic urgency model | Sometimes, one direction | A transcript |
+| PIMS-integrated answering | Yes | Yes, from your written protocol | Yes, read and write | A written summary in the record |
+
+Human answering services are the closest competitor on coverage and the furthest on integration. Their pricing is not public — most quote per minute or per call after a consultation, so you cannot compare them to a published rate without asking. Their triage quality depends entirely on how well the script you give them survives being read by a rotating pool of operators who have never met your veterinarians.
+
+Generic AI receptionists are cheap and answer the phone. What they do not do is read your schedule or write to it, which means the booking still lands with your staff. For a closer look at that category, see [AI receptionist for veterinary clinics](/blog/ai-receptionist-for-veterinary-clinics/).
+
+## What setup involves
+
+Setup is a configuration exercise, not a development project. The work is on your side: sending the written emergency protocol, listing the appointment types and durations, naming the people clinical questions route to, and confirming which PIMS you run.
+
+Practices on the common systems — Avimark, Cornerstone, ezyVet, Shepherd, Vetspire — are covered; see [VetReception integrations](/works-with-the-software-veterinary-practices-already-run/) for the current list and what each connection reads and writes. If your PIMS is not on it, that is the first question to ask, not the last.
+
+The protocol document is the long pole. Practices that already have a written emergency protocol in a shared drive move quickly. Practices that have the protocol in three veterinarians' heads need to write it down first — which is worth doing regardless of which vendor you choose.
+
+## What to check before you commit
+
+Ask for these in writing, and treat a vague answer as a no.
+
+- Which fields does the connection read, and which does it write?
+- What happens when two calls arrive at once for the same slot?
+- How is the protocol updated when your practice changes it?
+- What is the escalation path when the system cannot resolve a call?
+- What does the front desk actually receive, and where does it live?
+
+Run a parallel test before going live: keep your existing after-hours arrangement for two weeks while the system answers, and compare the bookings it created against what your team would have done. That comparison tells you more than any demo.
+
+## Pricing
+
+VetReception is priced per practice rather than per call, so a busy Monday does not cost more than a quiet one. The full structure is on the [veterinary practices pricing](/pricing-for-veterinary-practices/) page. Human answering services typically quote per minute or per call, and their rates are not public, so the only honest comparison is against a quote you request directly.
+
+## The short version
+
+A PIMS integration phone system is worth paying for only if it reads your schedule and writes to it. Triage has to come from your written protocol, not a generic model. Clinical questions have to route to a named person. And the front desk has to receive a summary in the record, not a voicemail to work through. If a vendor cannot describe those four things specifically, the integration is a message queue with better branding.

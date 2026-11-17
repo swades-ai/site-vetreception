@@ -23,6 +23,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 - [Cornerstone Practice Management Phone: 24/7 Booking](https://vetreception.swades.ai/blog/cornerstone-practice-management-phone/): How a Cornerstone practice management phone setup works when calls are answered 24/7, triaged on your own protocol and booked straight into Cornerstone.
 - [Emergency Vet Call Triage: How Calls Get Sorted 24/7](https://vetreception.swades.ai/blog/emergency-vet-call-triage/): How emergency vet call triage works when the call arrives at 3am: protocol-based sorting, PIMS booking, and what the front desk gets instead of a voicemail.
 - [ezyVet Integration: 24/7 Vet Call Answering and Booking](https://vetreception.swades.ai/blog/ezyvet-integration/): How the ezyVet integration answers after-hours calls, triages against your written emergency protocol, and books appointments straight into ezyVet.
+- [PIMS Integration Phone System: What It Must Read and Write](https://vetreception.swades.ai/blog/pims-integration-phone-system/): A PIMS integration phone system answers calls and books into your practice software. What the connection must read and write, and how triage works.
 - [Prescription Refill Request Line: 24/7 Vet Call Handling](https://vetreception.swades.ai/blog/prescription-refill-request-line/): How a prescription refill request line works in a veterinary practice: who answers, what gets captured, where it lands, and what still needs a veterinarian.
 - [Shepherd Veterinary Software Integration: 24/7 Booking](https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/): How VetReception's Shepherd veterinary software integration answers every call, triages against your own protocol and writes the booking into Shepherd.
 - [Vet Clinic Missed Calls: What Happens and How to Stop Them](https://vetreception.swades.ai/blog/vet-clinic-missed-calls/): What a missed call costs a veterinary practice, what happens on the call you never hear, and how calls get answered, triaged and booked into the PIMS.
@@ -104,6 +105,11 @@ https://vetreception.swades.ai/blog/vet-clinic-missed-calls/
 
 A missed call at a veterinary practice is not a message waiting to be returned. It is a client who dialled, heard nothing useful, and started looking for another number. The reason it happens is structural: the front desk is a single point of failure, and it is also the person checking in a vomiting dog, taking payment, and answering the line that is ringing right now.
 
+## Veterinary Appointment Scheduling Software: 24/7 Booking
+https://vetreception.swades.ai/blog/veterinary-appointment-scheduling-software/
+
+Veterinary appointment scheduling software is judged on the calls that arrive when nobody can pick up the phone. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own written emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+
 ## Veterinary Triage Protocol Phone: How Calls Get Sorted 24/7
 https://vetreception.swades.ai/blog/veterinary-triage-protocol-phone/
 
@@ -124,7 +130,7 @@ https://vetreception.swades.ai/the-terms-veterinary-practices-use/
 
 Most veterinary call answering products are sold with the same six words — answer, triage, book, integrate, summarise, escalate — and mean different things by each. Two vendors can both claim "triage" while one applies a generic urgency model and the other reads the practice's own written emergency protocol. Getting the definitions straight first is what makes a demo comparable, and it is what makes a quote comparable.
 
-## Veterinary Appointment Scheduling Software: 24/7 Booking
-https://vetreception.swades.ai/blog/veterinary-appointment-scheduling-software/
+## PIMS Integration Phone System: What It Must Read and Write
+https://vetreception.swades.ai/blog/pims-integration-phone-system/
 
-Veterinary appointment scheduling software is judged on the calls that arrive when nobody can pick up the phone. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own written emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+A PIMS integration phone system answers the call and creates the appointment inside the practice management software your team already has open. VetReception does that on every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triaging against the practice's own written emergency protocol rather than a generic script, and leaving the front desk a written summary instead of a voicemail to work through.
