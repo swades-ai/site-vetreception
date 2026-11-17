@@ -1,0 +1,126 @@
+---
+title: "Cornerstone Practice Management Phone: 24/7 Booking"
+description: "How a Cornerstone practice management phone setup works when calls are answered 24/7, triaged on your own protocol and booked straight into Cornerstone."
+pageType: "article"
+keyword: "cornerstone practice management phone"
+schemaType: "FAQPage"
+publishedAt: "2026-11-17"
+updatedAt: "2026-11-16"
+brand: "VetReception"
+faq:
+  - q: "Does VetReception write appointments directly into Cornerstone, or does it send a message for staff to enter?"
+    a: "Bookings are written into the PIMS directly — client, patient, appointment and reason for visit — rather than sent as a message for someone to re-key. That is the difference between this and a message-taking answering service, and it is why the front desk opens a list of decisions in the morning instead of a voicemail queue. Where a practice's Cornerstone configuration limits what an external system can write, the integration is built within those limits; if appointment-type selection is not permitted, the booking is still created and the type is set by staff."
+  - q: "How does the triage work if our practice does not have a written emergency protocol?"
+    a: "The triage runs on the practice's own written emergency protocol, so if that document does not exist, writing it is part of onboarding. In practice most practices have the rules in their vets' heads rather than on paper, and the onboarding session turns that into a document. It is worth having regardless of whether you buy anything, because it is the same document a locum or a new graduate needs on their first overnight shift. Once written, changing the protocol changes the phone behaviour without a rebuild."
+  - q: "What happens when a caller asks a clinical question the system should not answer?"
+    a: "It is routed to a named person at the practice, with the call details attached. The system never gives clinical advice — no dosing guidance, no assessment of whether a symptom is serious, no post-operative instructions beyond what your protocol specifies. Those calls are flagged for a human and arrive with the context already gathered, so the person picking it up is not starting from scratch. A non-zero escalation count is the correct outcome, not a failure; it is the count of genuinely clinical calls."
+  - q: "How is this priced compared to a per-call answering service?"
+    a: "Pricing is structured by practice size rather than per call or per minute, which matters because the value of the service goes up precisely when call volume spikes — overnight, during surgery, over holidays. A per-call model charges you most in the weeks you most need coverage. The veterinary practices pricing page sets out how the calculation works for a practice running one to six veterinarians. Many human answering services do not publish their rates, so treat their cost as not public until you have a written quote to compare against."
+  - q: "Does this replace our front desk staff?"
+    a: "No. It removes the part of the front desk's day that is pure interruption — answering routine calls while trying to check in a client or process a discharge — and it covers the hours when nobody is at the desk at all. Staff still handle everything that needs a person: clinical questions, difficult conversations, clients who want to speak to a specific vet. What changes is that the overnight and surgical-block calls stop becoming voicemails, and the morning starts from a written summary rather than a queue to work through."
+---
+
+<span data-studio-release="cdb0f9169f1c82dd3547ed2c354ef299ce54b284e64ecb68366787e8e4d4c25f" hidden></span>
+## The short answer
+
+A Cornerstone practice management phone setup is only worth paying for if the call ends as an appointment on the Cornerstone schedule rather than a message someone re-keys on Monday. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+
+Cornerstone is the IDEXX cloud PIMS holding the schedule, patient record and client history for a large share of US small-animal practices. This page is about the layer in front of it: what the phone does, what it writes back, and what to check before you commit.
+
+## The three things "Cornerstone phone integration" can mean
+
+Vendors use the same phrase for three different products, and only one of them removes work from your front desk.
+
+**Call logging.** The call is noted against the client record. Useful for history. Useless at 3am, because nobody is there to turn the note into an appointment.
+
+**Message taking.** A summary is dropped somewhere for staff to action. This is what most answering services do, and it is why Monday mornings start with a queue. The [veterinary answering service](/blog/veterinary-answering-service/) page covers what that category looks like in practice.
+
+**Booking.** The appointment is created on the Cornerstone schedule, against the right client and patient, with the reason for the visit attached. The client gets a confirmation. Nobody re-keys anything.
+
+VetReception does the third. The distinction matters because the real cost of a missed call is not the call — it is the rework of turning a message into a booking, plus the client who booked elsewhere while your team was in surgery.
+
+## What has to be true before a booking is worth anything
+
+A booking written into Cornerstone is only useful if it lands in the right slot with the right context. Four things have to hold, and each is a place generic services fail.
+
+- **Client matching.** The caller is matched to an existing Cornerstone client record by phone number, or a new record is created from the details captured on the call.
+- **Patient matching.** The pet is matched to the patient record under that client. Multi-pet households are the common failure point.
+- **Appointment type.** The visit is booked as the correct type — wellness, sick, recheck, urgent — so the schedule reflects real workload rather than a block of undifferentiated slots.
+- **Reason for visit.** The presenting complaint is attached to the appointment, so the vet walks in already knowing why the animal is there.
+
+Where a practice's Cornerstone configuration restricts what an external system can write, we work within that configuration rather than around it. If your setup permits appointment creation but not appointment-type selection, that is what gets built, and the type is set by staff.
+
+## Triage runs on the practice's own written emergency protocol
+
+This is the part that separates a veterinary phone system from a general-purpose answering service. A generic service asks a scripted set of questions and applies an urgency model built for human callers. A veterinary practice's urgency rules are different, and they are yours.
+
+VetReception triages against the practice's own written emergency protocol. If your protocol says a cat with a blocked urethra is seen within the hour regardless of the time, that is what the system does. If your protocol says a limping dog with no swelling is offered the next available slot, that is what it does. The protocol is the practice's document, not ours.
+
+Two consequences follow. The triage decision is defensible, because it is your clinical judgement encoded rather than a vendor's guess. And changing the protocol changes the behaviour without a rebuild. The [veterinary triage protocol phone](/blog/veterinary-triage-protocol-phone/) page goes through how a protocol is structured for phone use.
+
+The system never gives clinical advice. Anything clinical — dosing questions, post-operative concerns, whether a symptom is serious — is routed to a named person at the practice with the call details attached. The phone layer handles logistics: who, when, which patient, how urgent by your rules.
+
+## The calls that arrive at 3am and during surgery
+
+The two windows where a small-animal practice loses the most calls are the ones with no front desk: overnight, and the middle of a surgical block.
+
+Overnight, the caller is usually frightened and deciding whether to drive. A voicemail at 3am is a decision made without information. An answered call that triages against your protocol and either books an urgent slot or tells the client what your protocol says to do next is a different outcome entirely.
+
+During surgery, the phone rings in a room where nobody can pick up. Those calls are the routine ones — refills, appointment requests, a question about a discharge — and they are the ones most likely to be lost permanently, because the client simply calls the next practice on the list. Answering them and writing the booking into the PIMS removes the entire category. [After hours vet phone answering](/blog/after-hours-vet-phone-answering/) covers the overnight window in detail, and [emergency vet call triage](/blog/emergency-vet-call-triage/) covers how protocol-driven urgency decisions are made.
+
+## Where Cornerstone sits among the systems we write into
+
+Cornerstone is one of several PIMS we book into. The integration work is not identical across them, and it is worth knowing which category your system falls into before you compare services.
+
+| PIMS | Booking written back | Notes |
+| --- | --- | --- |
+| Cornerstone | Yes | Client, patient and appointment creation |
+| Avimark | Yes | See [Avimark integration](/blog/avimark-integration/) |
+| Ezyvet | Yes | See [Ezyvet integration](/blog/ezyvet-integration/) |
+| Vetspire | Yes | See [Vetspire integration](/blog/vetspire-integration/) |
+| Shepherd | Yes | See [Shepherd veterinary software integration](/blog/shepherd-veterinary-software-integration/) |
+
+If your practice runs Cornerstone alongside a separate scheduling tool, the booking still belongs in Cornerstone, because that is the record your team actually works from. The full list of systems and what each one supports is on [VetReception integrations](/works-with-the-software-veterinary-practices-already-run/).
+
+## What the front desk opens in the morning
+
+The output of an overnight shift is a written summary per call, not a voicemail to listen to. Each summary carries the client, the patient, the reason for the call, the triage outcome against your protocol, and what was booked or what still needs a decision.
+
+That last category is the one that matters operationally. Some calls cannot be resolved by a phone layer — a client asking whether a lump needs removing, a request for a specific vet at a specific time. Those arrive flagged for a person, with the context already gathered, rather than as a message that has to be reconstructed.
+
+The practical effect is that the morning huddle starts from a list of decisions rather than a list of calls. The [veterinary client communication](/blog/veterinary-client-communication/) page covers the client-facing side of the same shift.
+
+## How this compares to the alternatives
+
+Three options are usually on the table for a practice with no overnight desk.
+
+**A human answering service.** Live operators, often handling multiple industries. They can take a message and read a script. They generally cannot write into Cornerstone, and their triage follows their script rather than your protocol. Pricing varies by service and is frequently quoted per call or per minute; where a provider does not publish rates, treat the cost as not public until you have a quote in hand.
+
+**An in-house overnight receptionist.** Full control, and the highest cost of the three once wages, holiday coverage and turnover are counted. It also does not solve the surgery window, because the same person cannot be at the desk and in the room.
+
+**VetReception.** Answers every call, triages on your protocol, books into Cornerstone, summarises for the front desk. Pricing is structured by practice size rather than per call, and the [veterinary practices pricing](/pricing-for-veterinary-practices/) page explains how it is calculated. If you want to model what your current call handling costs against it, the [veterinary call cost calculator](/what-veterinary-practices-spend-on-this-a-calculator/) does the arithmetic on your own numbers.
+
+## What setup involves
+
+Setup takes three inputs from the practice and nothing else.
+
+1. **Your written emergency protocol.** The document your vets already use to decide urgency. If it exists only in people's heads, it gets written down during onboarding, which is worth doing regardless of whether you buy anything.
+2. **Your Cornerstone configuration.** What the system permits an external service to read and write, and which appointment types map to which call reasons.
+3. **Your routing rules.** Who gets called for a clinical question, at what hour, and by what method.
+
+After that, calls are answered and the summaries start appearing. The [how veterinary practices use it](/how-veterinary-practices-use-it/) page walks through the first weeks at a practice, and [the problem, in the words veterinary practices use](/the-problem-in-the-words-veterinary-practices-use/) collects the complaints this is built against.
+
+## What to measure after a month
+
+Four numbers tell you whether it is working.
+
+- **Calls answered as a share of calls received.** This should be total. If it is not, something is misrouted.
+- **Bookings created in Cornerstone from calls outside staffed hours.** This is the direct replacement for the voicemail queue.
+- **Urgent cases triaged to same-hour slots.** Compare against your protocol's intent. If the number looks wrong, the protocol encoding is wrong, not the clients.
+- **Calls escalated to a named person.** A healthy number here is not zero; it is the count of genuinely clinical calls, which is the correct behaviour.
+
+Benchmarks for what these look like across practices are collected on [benchmarks for veterinary practices](/blog/benchmarks-for-veterinary-practices/).
+
+## Where it stops
+
+VetReception does not give clinical advice, does not assess or name conditions, and does not replace your staff. It answers the phone, applies your protocol to decide urgency, books into Cornerstone, and hands clinical questions to a person. A practice looking for something that makes clinical judgements on the phone is looking for a different product, and should be sceptical of any service that offers it.
