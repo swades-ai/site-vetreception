@@ -32,6 +32,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 - [Veterinary Answering Service: 24/7 Calls Booked Into PIMS](https://vetreception.swades.ai/blog/veterinary-answering-service/): A veterinary answering service that answers every call, triages against the practice's own written emergency protocol, and books straight into the PIMS.
 - [Veterinary Appointment Scheduling Software: 24/7 Booking](https://vetreception.swades.ai/blog/veterinary-appointment-scheduling-software/): Veterinary appointment scheduling software that answers every call, triages against your own protocol, and books straight into the PIMS. Compare the options.
 - [Veterinary Client Communication: Calls, Triage, PIMS Booking](https://vetreception.swades.ai/blog/veterinary-client-communication/): How veterinary client communication works when every call is answered, triaged against the practice's own written emergency protocol, and booked into the PIMS.
+- [Veterinary Practice Benchmarks: Call Answering Data](https://vetreception.swades.ai/blog/benchmarks-for-veterinary-practices/): How to benchmark veterinary call answering: the four figures to pull from your own phone logs, triage fidelity against your protocol, and PIMS write-back tests.
 - [Veterinary Triage Protocol Phone: How Calls Get Sorted 24/7](https://vetreception.swades.ai/blog/veterinary-triage-protocol-phone/): A veterinary triage protocol phone answers every call, sorts it against the practice's own written emergency protocol, and books into the PIMS.
 - [VetReception: What Happened at One Veterinary Practice](https://vetreception.swades.ai/blog/what-happened-at-one-of-our-veterinary-practices/): A walkthrough of how one small-animal practice routed after-hours calls to VetReception, triaged against its own protocol, and booked into its PIMS.
 - [Vetspire Integration: 24/7 Vet Call Answering and Booking](https://vetreception.swades.ai/blog/vetspire-integration/): How VetReception connects to Vetspire: calls answered 24/7, triaged against the practice's own written emergency protocol, and booked straight into the PIMS.
@@ -143,12 +144,17 @@ https://vetreception.swades.ai/blog/emergency-vet-call-triage/
 
 Emergency vet call triage is the process of deciding, on the call itself, whether the animal needs to be seen now, today, or at a booked appointment — and then acting on that decision before the caller hangs up. VetReception does this against the practice's own written emergency protocol rather than a generic urgency model, and writes the outcome into the PIMS.
 
+## Veterinary Client Communication: Calls, Triage, PIMS Booking
+https://vetreception.swades.ai/blog/veterinary-client-communication/
+
+Veterinary client communication begins with whether the phone gets answered at all. A practice that answers every call, sorts it against the protocol its own veterinarians wrote, and books the appointment into the PIMS has solved the part of client communication that happens before the client ever reaches the building.
+
 ## Veterinary Practice Phone Terms: A Working Glossary
 https://vetreception.swades.ai/the-terms-veterinary-practices-use/
 
 Most veterinary call answering products are sold with the same six words — answer, triage, book, integrate, summarise, escalate — and mean different things by each. Two vendors can both claim "triage" while one applies a generic urgency model and the other reads the practice's own written emergency protocol. Getting the definitions straight first is what makes a demo comparable, and it is what makes a quote comparable.
 
-## Veterinary Client Communication: Calls, Triage, PIMS Booking
-https://vetreception.swades.ai/blog/veterinary-client-communication/
+## Veterinary Practice Benchmarks: Call Answering Data
+https://vetreception.swades.ai/blog/benchmarks-for-veterinary-practices/
 
-Veterinary client communication begins with whether the phone gets answered at all. A practice that answers every call, sorts it against the protocol its own veterinarians wrote, and books the appointment into the PIMS has solved the part of client communication that happens before the client ever reaches the building.
+No trade body publishes veterinary call-handling benchmarks, so the only numbers that survive scrutiny are the ones your own phone system already produces. This page sets out which figures to pull, what to ask a vendor to prove, and how to score the answers on your own call sample rather than a demo line.

@@ -1,0 +1,96 @@
+---
+title: "Veterinary Practice Benchmarks: Call Answering Data"
+description: "How to benchmark veterinary call answering: the four figures to pull from your own phone logs, triage fidelity against your protocol, and PIMS write-back tests."
+pageType: "benchmark"
+schemaType: "Article"
+publishedAt: "2026-11-17"
+updatedAt: "2026-09-25"
+brand: "VetReception"
+faq:
+  - q: "What happens when the system cannot classify a call against our protocol?"
+    a: "Calls that do not map cleanly to a tier go to a named person rather than being guessed at. In practice the system takes the message, marks it unclassified, and either transfers to the on-call vet if your protocol says so or queues it for the front desk with the caller's details attached. The system never gives clinical advice, so anything that sounds clinical goes to a human rather than being resolved on the call. When you run the eight-call acceptance test, include one deliberately ambiguous scenario and check where it lands."
+  - q: "How do we know the triage follows our protocol and not a generic script?"
+    a: "You test it. Write your protocol as three or four tiers with a named destination for each, then write two example calls per tier. Run those eight calls against the live system and score whether the tier and the destination both matched. A vendor using a generic urgency model will fail where your protocol differs from the obvious answer, such as a blocked cat at 2am that your protocol sends straight to the on-call mobile rather than to a next-morning slot. Seven out of eight is a fail if the miss is the immediate-transfer case."
+  - q: "Does the booking go into our PIMS, or do we get an email?"
+    a: "The booking is written into the PIMS against the client and patient record, with an appointment type your team already uses, and the front desk gets a written summary rather than a voicemail to work through. Ask two questions before you commit: how the system matches an existing client who calls from a different number, and what it does when the requested slot is already taken. Duplicate client records are the most common complaint after a switch and are preventable at the integration stage. If your PIMS is not supported, treat that as disqualifying."
+  - q: "How does pricing behave when after-hours volume spikes?"
+    a: "Per-call pricing looks cheap on a quiet Tuesday and expensive on a Saturday evening, because after-hours demand is unevenly distributed. Most practices see a low background rate on weeknights, a sharp spike on Friday and Saturday, and a second cluster around public holidays. A flat monthly rate shifts that variability to the vendor, which is usually the better arrangement when your volume is unpredictable. [Veterinary practices pricing](/pricing-for-veterinary-practices/) sets out how the flat model is structured and what falls inside it."
+  - q: "What should we measure before and after switching?"
+    a: "Pull ninety days of call logs first and extract four figures: total inbound calls, calls that hit voicemail or abandoned before answer, calls arriving outside posted hours, and the share of after-hours calls that produced a booking within 24 hours. Those become your baseline. After switching, re-run the same four over the same period length. The third and fourth numbers are usually where the change shows up, because a practice with no overnight front desk typically cannot separate after-hours calls from general overflow until someone starts answering all of them."
+---
+
+<span data-studio-release="bd6e6a550fe5dac43c7b02472ecee4a17be007bd374eae5222e486ba261e7db9" hidden></span>
+No trade body publishes veterinary call-handling benchmarks, so the only numbers that survive scrutiny are the ones your own phone system already produces. This page sets out which figures to pull, what to ask a vendor to prove, and how to score the answers on your own call sample rather than a demo line.
+
+## The four figures to pull before you talk to anyone
+
+Ninety days of call logs is enough to build a baseline no vendor can argue with. Pull total inbound calls, calls that hit voicemail or abandoned before answer, calls arriving outside posted hours, and the share of after-hours calls that produced a booking rather than a message.
+
+For an independent small-animal practice running one to six veterinarians with no overnight front desk, the third and fourth figures are usually the ones nobody has looked at. Surgery blocks and lunch cover blur into general overflow in most logs, so after-hours volume is undercounted until someone separates it.
+
+- Calls answered after the fourth ring, split by hour of day
+- Abandoned calls, split by whether the caller hung up before or after the greeting
+- After-hours calls that produced a booking in the PIMS within 24 hours
+- Calls arriving during surgery blocks, which most practices cannot isolate today
+
+With those four in hand, every vendor claim becomes testable against your own recordings rather than their scripted demo.
+
+## Answer rate is the weakest benchmark on the list
+
+Every vendor claims to answer every call, so the claim carries almost no information. What carries information is whether they will run a pilot on your number and hand you the logs.
+
+A pilot on your own line produces evidence you can compare to your baseline directly. Ask for the raw log, not a dashboard screenshot, and check the calls that arrive at 3am separately from the daytime ones. A vendor that will not run a pilot on your number is telling you something about the rows below.
+
+## Triage fidelity: the practice's own written emergency protocol
+
+This is where vendors separate. Triage fidelity means the caller is sorted against the practice's own written emergency protocol rather than a generic urgency model, and the difference only shows up on the cases where your protocol disagrees with the obvious answer.
+
+Write your protocol down before you speak to a vendor. If it lives only in the head of whoever is on call, neither you nor the vendor can benchmark anything. A workable protocol has three or four tiers, each with a named destination: immediate transfer to the on-call vet, a booked emergency slot, a next-day appointment, or a message for the front desk. Then write two example calls per tier. Those eight calls are your acceptance test, and you run them against the live system, not a demo.
+
+Score each call twice: did the tier match, and did the destination match. Seven out of eight is a fail if the miss is the immediate-transfer case. [Emergency vet call triage](/blog/emergency-vet-call-triage/) walks through how the tiers are usually drawn.
+
+## Write-back: written into the PIMS, not emailed to you
+
+A booking that exists only in the vendor's dashboard is not a booking. It has to be written into the PIMS against the right client and patient record, with an appointment type your team already recognises, and the front desk has to get a summary rather than a voicemail to work through.
+
+Ask two specific questions before committing. First, if an existing client calls from a number that is not on file, does the system match on name, on number, or create a duplicate record? Duplicate client records are the most common complaint after a switch and are preventable at the integration stage. Second, what happens when the slot the caller wants is already taken?
+
+[VetReception integrations](/works-with-the-software-veterinary-practices-already-run/) lists which practice management systems are supported and what is written back to each. If your PIMS is not on that list, treat it as a disqualifying answer rather than a roadmap item.
+
+## A scorecard for the shortlist
+
+Fill this in with evidence from your own pilot, not with vendor assurances. The table is the structure to complete, not a set of results.
+
+| Benchmark | What to ask for | Pass condition |
+|---|---|---|
+| Answer rate | Raw call logs from a 30-day pilot on your number | Every call answered, including the ones that arrive at 3am |
+| Triage fidelity | Routing decision on eight scenarios drawn from your protocol | Matches your written protocol, including the ambiguous case |
+| PIMS write-back | A test booking in your sandbox or live PIMS | Appointment created with correct type and client record |
+| Front desk handoff | The summary a receptionist receives the next morning | Structured summary, not a voicemail or raw transcript |
+| Clinical boundary | What the system says when a caller asks for advice | Routes to a named person; never gives clinical advice |
+
+## The front desk handoff is the benchmark buyers forget
+
+Your receptionists will judge the vendor on the morning summary, and it is the row most buyers never test. A useful summary states the caller, the patient, the reason for the call, the triage tier, and what was booked or promised. It does not include a transcript.
+
+Receptionists working through a queue of overnight calls need to triage the summaries themselves in under a minute each, so length is a feature rather than a detail. Ask to see five real summaries from a practice of similar size, then have your own receptionist read them and say which ones they would have to chase.
+
+## What after-hours demand actually looks like
+
+After-hours volume is unevenly distributed, which is why a single week of data misleads. Most practices see a low background rate on weeknights, a sharp spike on Friday and Saturday evenings, and a second cluster around public holidays.
+
+That shape matters for how you buy. Per-call pricing looks cheap on a Tuesday and expensive on a Saturday; a flat monthly rate shifts that variability to the vendor. [Veterinary practices pricing](/pricing-for-veterinary-practices/) sets out how the flat model is structured and what falls inside it.
+
+The other thing to measure is the calls that are not emergencies. A large share of after-hours calls are prescription refills, appointment changes and questions that could wait until morning. Sorting those correctly is what keeps the on-call vet's phone quiet, and it is the part of the benchmark most vendors never test. [Prescription refill request line](/blog/prescription-refill-request-line/) covers how those calls are handled without a booking.
+
+## Running the acceptance test properly
+
+Run the eight calls on the live system during a normal week, not during onboarding when extra staff are watching. Log the tier and destination the system chose for each, then compare against your written protocol.
+
+If two vendors both pass, the tiebreaker is the ambiguous case, because that is the one a generic urgency model gets wrong. A vendor that guesses on an ambiguous call has not read your protocol; a vendor that routes it to a named person has.
+
+## What to do with the numbers
+
+Benchmarking only matters if it changes a decision. Take your ninety-day baseline, write your protocol down, and run the eight-call test against two or three vendors on your own number.
+
+The vendor that answers every call, matches your protocol on the ambiguous case, writes the booking into the PIMS, and leaves a summary your receptionist can act on is the one to buy. Everything else is a demo.
