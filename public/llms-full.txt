@@ -17,6 +17,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 
 ## Blog
 
+- [After Hours Vet Phone Answering: How It Works 24/7](https://vetreception.swades.ai/blog/after-hours-vet-phone-answering/): How after hours vet phone answering works when calls are triaged against the practice's own written emergency protocol and booked straight into the PIMS.
 - [AI Receptionist for Veterinary Clinics: Call Handling Guide](https://vetreception.swades.ai/blog/ai-receptionist-for-veterinary-clinics/): How an AI receptionist for veterinary clinics answers, triages against your own protocol and books into the PIMS. Setup, comparison and what to measure.
 - [Avimark Integration: Booking Calls Into Avimark 24/7](https://vetreception.swades.ai/blog/avimark-integration/): How VetReception's Avimark integration turns an after-hours call into an appointment on your schedule, triaged against your own written emergency protocol.
 - [Cornerstone Practice Management Phone: 24/7 Booking](https://vetreception.swades.ai/blog/cornerstone-practice-management-phone/): How a Cornerstone practice management phone setup works when calls are answered 24/7, triaged on your own protocol and booked straight into Cornerstone.
@@ -56,6 +57,11 @@ VetReception answers calls your practice cannot get to and writes the booking in
 https://vetreception.swades.ai/blog/cornerstone-practice-management-phone/
 
 A Cornerstone practice management phone setup is only worth paying for if the call ends as an appointment on the Cornerstone schedule rather than a message someone re-keys on Monday. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+
+## ezyVet Integration: 24/7 Vet Call Answering and Booking
+https://vetreception.swades.ai/blog/ezyvet-integration/
+
+VetReception answers the calls your practice cannot get to and books the appointment into ezyVet, so the booking exists in the system your team opens at 8am. The integration is not a calendar sync bolted onto a call centre: the handler reads the practice's own written emergency protocol, decides urgency from it, then creates the booking against the matching ezyVet client and patient record.
 
 ## Shepherd Veterinary Software Integration: 24/7 Booking
 https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/
@@ -112,7 +118,7 @@ https://vetreception.swades.ai/the-terms-veterinary-practices-use/
 
 Most veterinary call answering products are sold with the same six words — answer, triage, book, integrate, summarise, escalate — and mean different things by each. Two vendors can both claim "triage" while one applies a generic urgency model and the other reads the practice's own written emergency protocol. Getting the definitions straight first is what makes a demo comparable, and it is what makes a quote comparable.
 
-## ezyVet Integration: 24/7 Vet Call Answering and Booking
-https://vetreception.swades.ai/blog/ezyvet-integration/
+## After Hours Vet Phone Answering: How It Works 24/7
+https://vetreception.swades.ai/blog/after-hours-vet-phone-answering/
 
-VetReception answers the calls your practice cannot get to and books the appointment into ezyVet, so the booking exists in the system your team opens at 8am. The integration is not a calendar sync bolted onto a call centre: the handler reads the practice's own written emergency protocol, decides urgency from it, then creates the booking against the matching ezyVet client and patient record.
+After hours vet phone answering covers the calls nobody at the practice is free to pick up: overnight, through surgery blocks, and at three in the morning. The requirement is not a message service — it is a call that gets answered, triaged against the practice's own written emergency protocol, and booked into the PIMS before the caller hangs up.
