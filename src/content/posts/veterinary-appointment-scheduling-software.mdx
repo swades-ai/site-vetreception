@@ -1,0 +1,104 @@
+---
+title: "Veterinary Appointment Scheduling Software: 24/7 Booking"
+description: "Veterinary appointment scheduling software that answers every call, triages against your own protocol, and books straight into the PIMS. Compare the options."
+pageType: "article"
+keyword: "veterinary appointment scheduling software"
+schemaType: "Article"
+publishedAt: "2026-11-17"
+updatedAt: "2026-11-16"
+brand: "VetReception"
+faq:
+  - q: "Does this replace the front desk?"
+    a: "No. It handles the calls the front desk cannot get to — after hours, during surgery, and when the desk is already on another line. The desk still checks clients in, takes payments, handles walk-ins and works the queues the system creates. What changes is that the desk stops transcribing voicemails into appointments and stops losing the calls that arrived overnight. The written summary replaces the message, not the person."
+  - q: "What happens if a caller describes something the protocol does not cover?"
+    a: "The call is escalated to a person rather than guessed at. The system asks the questions the practice's protocol says to ask, and where the protocol is silent it does not invent a severity judgement. In practice the caller is either routed to the practice's named on-call contact or given the emergency hospital details, depending on how the practice configured the fallback. The protocol is reviewed before the line goes live, so most gaps are found during setup rather than on a live call."
+  - q: "Which PIMS systems does it write into?"
+    a: "Avimark, Cornerstone, ezyVet, Shepherd and Vetspire are covered, along with other systems through their integration layers. The connections are not identical: some expose open slot availability directly, others require a booking call with a defined appointment type and duration. That is why each integration has its own page describing exactly what is read and what is written. Before committing, check that your appointment types are defined in the PIMS, because the booking has to match them."
+  - q: "How is this priced compared with a human answering service?"
+    a: "Human answering services in this market generally bill per minute or per call, with after-hours rates higher than daytime, and the specific rates are not public — they vary by contract and by volume. VetReception is priced around call volume and number of locations rather than a per-minute meter, so a long triage call does not cost more than a short one. The veterinary practices pricing page sets out how the tiers are structured."
+  - q: "Does the AI give clinical advice to callers?"
+    a: "No, and it is built so that it cannot. Anything clinical is routed to a named person at the practice. The system recognises urgency, applies the practice's own routing rules, and books or escalates — the same job a trained receptionist does on the phone. It does not assess whether a pet is well, does not suggest treatment, and does not tell a caller to wait and see. That boundary is what keeps it usable in a regulated practice."
+  - q: "What does the practice have to provide before the line goes live?"
+    a: "Four things: the written emergency protocol, the appointment types and durations, the after-hours routing rules, and PIMS access. The protocol is mapped to decision points and reviewed by the practice before go-live. Practices that already have a written protocol move fastest; practices that keep it in a senior receptionist's head spend the first session writing it down. The work is configuration, not an integration project."
+---
+
+<span data-studio-release="9183f0f3f4ea1c9fdac03bc493e03e5d45396f426bbf03bea4433129514f1edc" hidden></span>
+Veterinary appointment scheduling software is judged on the calls that arrive when nobody can pick up the phone. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own written emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+
+## What a scheduling tool has to do before the appointment exists
+
+A calendar is the last step of a phone call, not the first. Before an appointment can be created, somebody has to answer, work out what the caller needs, decide how fast it needs to happen, and pick a slot that matches the practice's appointment types. Most scheduling software starts at step four.
+
+That gap is where the calls are lost. An independent small-animal practice running one to six veterinarians, with a PIMS and no overnight front desk, gets three kinds of call on one line, and each needs a different response.
+
+**Routine booking.** A wellness exam, a dental check, a nail trim. This needs a live answer, a look at real open slots, and a confirmed appointment in the schedule. A callback request is not a booking.
+
+**Administrative requests.** Refills, records, insurance forms, price questions. These need to land in a queue the front desk can work in order, with the pet, the medication and the client already identified. The [prescription refill request line](/blog/prescription-refill-request-line/) page walks through that workflow.
+
+**Urgent and emergency calls.** These need triage against the practice's own written emergency protocol and a routing decision the practice has already made: come in now, go to the emergency hospital, or take a same-day slot.
+
+A generic urgency model cannot make the third decision, because the right answer is not universal. One practice sends a blocked cat straight in. Another, twenty minutes from a 24-hour hospital, sends it there. The protocol belongs to the practice, and the software has to read it rather than approximate it.
+
+### Why the front desk misses calls that are not emergencies
+
+The desk is not idle when the phone rings. Someone is checking in a euthanasia, restraining a fractious cat, counting controlled drugs, or on hold with a lab. The call that goes unanswered is usually not the dramatic one; it is the routine booking that a client then makes somewhere else, or the refill request that becomes a second call tomorrow.
+
+## Why the booking has to be written into the PIMS
+
+The standard failure of an answering service is the message. The call is answered, a note is taken, and the note arrives as a voicemail, a fax, or an email that someone has to read, interpret, and re-enter as an appointment. That is three touches for one booking, and each touch is a place the appointment is lost.
+
+When the booking is written into the PIMS, the appointment exists where every other appointment exists. The client gets a confirmation. The schedule reflects reality. Nobody transcribes anything.
+
+VetReception writes into Avimark, Cornerstone, ezyVet, Shepherd, Vetspire and other systems through their integration layers. The connections are not identical. Some expose open slot availability directly; others require a booking call with a defined appointment type and duration. The [Avimark integration](/blog/avimark-integration/) and [Shepherd veterinary software integration](/blog/shepherd-veterinary-software-integration/) pages describe what each connection reads and writes, and the [integrations overview](/works-with-the-software-veterinary-practices-already-run/) lists the rest.
+
+### What the front desk receives instead of a voicemail
+
+The desk gets a written summary: who called, which pet, what was said, what was booked, and what was flagged. Anything clinical is routed to a named person at the practice. The system never gives clinical advice.
+
+That constraint is not a limitation to work around. A receptionist does not assess a pet over the phone either; they recognise urgency and route it. Keeping the same boundary in software is what makes the tool usable in a regulated practice.
+
+## How triage is built from the practice's own written emergency protocol
+
+Setup starts with the document most practices already have for training new receptionists, even when it lives in a binder. That protocol is converted into decision points: what the caller describes, what the pet is doing, how long it has been going on, and which of the practice's routing rules applies.
+
+The system asks the questions the protocol says to ask. It does not invent a severity score. Where the protocol is silent, the call goes to a person rather than being guessed at.
+
+### The calls that arrive when nobody is at the desk
+
+A practice in surgery from 9am to 1pm cannot answer the phone. A practice closed at 11pm cannot answer at all. VetReception answers both, including the ones that arrive at 3am, and books them into the same schedule the morning team opens. The [after hours vet phone answering](/blog/after-hours-vet-phone-answering/) page covers how overnight handling runs in practice.
+
+## How this compares to the alternatives
+
+| Approach | Answers 24/7 | Triage source | Booking destination | Front desk work |
+|---|---|---|---|---|
+| Voicemail | No | None | None | Listen, call back, book |
+| Human answering service | Usually | Their script | Message to practice | Read message, call back, book |
+| Online booking widget | No (web only) | None | PIMS | None, but no phone calls handled |
+| Generic AI receptionist | Yes | Generic urgency model | Often a message | Read message, book |
+| VetReception | Yes | The practice's own written emergency protocol | Written into the PIMS | Review the summary |
+
+The row that decides the comparison is the triage source. A human answering service can be good, but its triage is only as good as the script the practice handed over, and it still ends in a message. A generic AI receptionist answers the phone but cannot apply a protocol it has never seen. The [AI receptionist for veterinary clinics](/blog/ai-receptionist-for-veterinary-clinics/) page goes through the call-handling differences in more detail.
+
+### Where the alternatives are priced
+
+Human answering services in this market generally bill per minute or per call, with after-hours rates above daytime rates. The specific rates are not public; they vary by contract and by volume, so a per-month comparison against them is not meaningful. Online booking widgets are usually bundled into the PIMS or sold as a low monthly add-on, and their pricing is likewise not published in a form that can be compared directly. The honest unit of comparison is the answered call, not the month.
+
+## What setup involves
+
+The practice supplies four things: its written emergency protocol, its appointment types and durations, its after-hours routing rules, and PIMS access. The protocol is mapped to decision points and reviewed by the practice before the line goes live.
+
+Most of the work sits on the practice side, because the protocol has to exist in writing. Practices that already have one move quickly. Practices that keep it in a senior receptionist's head spend the first session getting it out of there.
+
+### What the system will not do
+
+It will not give clinical advice. It will not decide a pet is fine. It will not book an appointment type the practice has not defined, and it will not override a full schedule to squeeze in a call the protocol says should go to the emergency hospital. Where the protocol does not cover a situation, the call goes to a person.
+
+## Where the money goes
+
+Pricing is structured around call volume and the number of locations rather than a flat seat licence, because the cost driver is answered calls, not users. There is no per-minute meter running during a call, which is the main structural difference from a human answering service. The [veterinary practices pricing](/pricing-for-veterinary-practices/) page sets out how the tiers are built.
+
+## The short version
+
+Scheduling software for a veterinary practice is judged on the calls that arrive when the front desk cannot pick up. Answering them is table stakes. Triaging them against the practice's own written emergency protocol and writing the booking into the PIMS is the part that removes work instead of adding it. If the tool ends in a message, the practice still has a phone problem.
+
+To see the whole system rather than one page of it, start at [VetReception](/).
