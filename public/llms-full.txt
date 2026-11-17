@@ -21,6 +21,7 @@ VetReception answers every call a veterinary practice cannot get to — after ho
 - [Avimark Integration: Booking Calls Into Avimark 24/7](https://vetreception.swades.ai/blog/avimark-integration/): How VetReception's Avimark integration turns an after-hours call into an appointment on your schedule, triaged against your own written emergency protocol.
 - [Cornerstone Practice Management Phone: 24/7 Booking](https://vetreception.swades.ai/blog/cornerstone-practice-management-phone/): How a Cornerstone practice management phone setup works when calls are answered 24/7, triaged on your own protocol and booked straight into Cornerstone.
 - [Emergency Vet Call Triage: How Calls Get Sorted 24/7](https://vetreception.swades.ai/blog/emergency-vet-call-triage/): How emergency vet call triage works when the call arrives at 3am: protocol-based sorting, PIMS booking, and what the front desk gets instead of a voicemail.
+- [ezyVet Integration: 24/7 Vet Call Answering and Booking](https://vetreception.swades.ai/blog/ezyvet-integration/): How the ezyVet integration answers after-hours calls, triages against your written emergency protocol, and books appointments straight into ezyVet.
 - [Prescription Refill Request Line: 24/7 Vet Call Handling](https://vetreception.swades.ai/blog/prescription-refill-request-line/): How a prescription refill request line works in a veterinary practice: who answers, what gets captured, where it lands, and what still needs a veterinarian.
 - [Shepherd Veterinary Software Integration: 24/7 Booking](https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/): How VetReception's Shepherd veterinary software integration answers every call, triages against your own protocol and writes the booking into Shepherd.
 - [Vet Clinic Missed Calls: What Happens and How to Stop Them](https://vetreception.swades.ai/blog/vet-clinic-missed-calls/): What a missed call costs a veterinary practice, what happens on the call you never hear, and how calls get answered, triaged and booked into the PIMS.
@@ -50,6 +51,11 @@ An AI receptionist for veterinary clinics answers the phone line, works out how 
 https://vetreception.swades.ai/blog/avimark-integration/
 
 VetReception answers calls your practice cannot get to and writes the booking into Avimark while the caller is still on the line. The appointment appears on the schedule your team already reads, with the reason for the visit attached, so nobody retypes a message in the morning.
+
+## Cornerstone Practice Management Phone: 24/7 Booking
+https://vetreception.swades.ai/blog/cornerstone-practice-management-phone/
+
+A Cornerstone practice management phone setup is only worth paying for if the call ends as an appointment on the Cornerstone schedule rather than a message someone re-keys on Monday. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
 
 ## Shepherd Veterinary Software Integration: 24/7 Booking
 https://vetreception.swades.ai/blog/shepherd-veterinary-software-integration/
@@ -106,7 +112,7 @@ https://vetreception.swades.ai/the-terms-veterinary-practices-use/
 
 Most veterinary call answering products are sold with the same six words — answer, triage, book, integrate, summarise, escalate — and mean different things by each. Two vendors can both claim "triage" while one applies a generic urgency model and the other reads the practice's own written emergency protocol. Getting the definitions straight first is what makes a demo comparable, and it is what makes a quote comparable.
 
-## Cornerstone Practice Management Phone: 24/7 Booking
-https://vetreception.swades.ai/blog/cornerstone-practice-management-phone/
+## ezyVet Integration: 24/7 Vet Call Answering and Booking
+https://vetreception.swades.ai/blog/ezyvet-integration/
 
-A Cornerstone practice management phone setup is only worth paying for if the call ends as an appointment on the Cornerstone schedule rather than a message someone re-keys on Monday. VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through.
+VetReception answers the calls your practice cannot get to and books the appointment into ezyVet, so the booking exists in the system your team opens at 8am. The integration is not a calendar sync bolted onto a call centre: the handler reads the practice's own written emergency protocol, decides urgency from it, then creates the booking against the matching ezyVet client and patient record.

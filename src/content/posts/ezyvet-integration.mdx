@@ -1,0 +1,129 @@
+---
+title: "ezyVet Integration: 24/7 Vet Call Answering and Booking"
+description: "How the ezyVet integration answers after-hours calls, triages against your written emergency protocol, and books appointments straight into ezyVet."
+pageType: "article"
+keyword: "ezyvet integration"
+schemaType: "Article"
+publishedAt: "2026-11-17"
+updatedAt: "2026-11-16"
+brand: "VetReception"
+faq:
+  - q: "Does VetReception write bookings directly into ezyVet, or into a separate portal?"
+    a: "Bookings are written into ezyVet itself, against the existing client and patient record where the caller matches one. There is no separate portal your team has to check and re-key from. The appointment appears on the ezyVet schedule with the call summary attached, so the reason for the visit is visible alongside the booking. Where a caller's phone number matches more than one client record, the call is flagged for human review rather than guessed at, because duplicate patient records are the most common failure mode in automated booking. The integrations overview page shows how the same pattern works across other systems."
+  - q: "What happens if a caller describes something that sounds like an emergency?"
+    a: "The call is matched against the practice's own written emergency protocol, not a generic urgency model. If the presentation falls into the branch your protocol marks as immediate, the system books the emergency slot and routes to the named person on your escalation list. It does not assess the animal's condition itself and never gives clinical advice. The disposition comes from your document, so the outcome is the one your own team would have reached. The practical prerequisite is that the protocol exists in written form — if it currently lives in two vets' heads, it needs writing down first."
+  - q: "How does this compare to a traditional veterinary answering service?"
+    a: "A traditional answering service typically puts an operator on the line working from a script shared across many industries, and the output is a message your team re-keys into ezyVet in the morning. VetReception applies your protocol and books the appointment, so the morning output is a set of summaries with actions already taken. Pricing models differ too: answering services often quote per call or per minute, and many do not publish rates at all, so the cost is unknown until you have a written quote. VetReception is priced by practice, set out on the veterinary practices pricing page."
+  - q: "What does setup involve, and how long before calls are handled?"
+    a: "Setup is configuration rather than development. You provide ezyVet access, the written emergency protocol, your appointment types and durations as configured in ezyVet, the escalation list of named people, and your opening hours and closures. A test client record is created and scripted calls are run against it — a routine booking, a new client, an urgent presentation, and a message-only call — with each checked in ezyVet to confirm the appointment, patient match and summary landed correctly. Most practices run it alongside their existing arrangement for a period rather than switching overnight."
+  - q: "Will this create duplicate client or patient records in ezyVet?"
+    a: "It can create a new record when the caller genuinely is new, which is the correct behaviour. For existing clients, the system matches on the phone number and books against the record it finds. Where a number matches more than one record, the call is flagged for a human rather than assigned to one arbitrarily. Before go-live it is worth checking how many client records in your ezyVet instance share a phone number, because a high duplicate rate means more calls get flagged for review. That is safe behaviour, but it changes the front desk's workload, so it is better to know the number in advance."
+---
+
+<span data-studio-release="6744adf51d669a6e4a6f0b790ea9f64b7cb68522273492717f93e9156ca74389" hidden></span>
+## What the ezyVet integration does
+
+VetReception answers the calls your practice cannot get to and books the appointment into ezyVet, so the booking exists in the system your team opens at 8am. The integration is not a calendar sync bolted onto a call centre: the handler reads the practice's own written emergency protocol, decides urgency from it, then creates the booking against the matching ezyVet client and patient record.
+
+ezyVet holds the clinical note, the invoice and the reminder, which is why the booking has to land there rather than in a separate portal. A booking that lives outside ezyVet is one somebody retypes the next morning; a booking written into the PIMS is one your nurses can see on the schedule before they finish the appointment in front of them.
+
+### What lands in ezyVet after a call
+
+Three records are created or updated, depending on whether the caller already exists in your system.
+
+- An appointment on the correct resource at the correct duration, against the existing client and patient where the caller matches a record.
+- A new client and patient record where the caller is new, with contact details captured on the call.
+- A call summary attached to the appointment, so the reason for the visit sits on the schedule rather than in a voicemail nobody has played.
+
+Where a caller's phone number matches more than one client record, the call is flagged for a human rather than guessed at. Duplicate patient records are the failure mode practices complain about most with automated booking, and stopping is safer than picking.
+
+## Triage runs on the practice's own written emergency protocol
+
+Most after-hours arrangements ask a caller how urgent they think the problem is. That produces two bad outcomes: the worried owner of a stable patient takes an emergency slot, or the owner of a genuinely critical patient says they will wait until morning.
+
+VetReception applies the practice's own written emergency protocol — the document your vets already use, listing which presentations come in immediately, which can wait for the next available slot, and which route to a named person. The handler matches what the caller describes to that document, so the disposition is the one your own team would have reached.
+
+### Where the clinical boundary sits
+
+The system never gives clinical advice. It does not say what is wrong with the animal, what to give it, or whether a symptom is serious in the abstract. It collects what the caller reports, matches it to your protocol, and either books, routes to a named person, or takes a message.
+
+Anything clinical goes to a human at the number you supplied. A receptionist, human or otherwise, is not the clinician, and a system that starts offering opinions on symptoms is a liability rather than a convenience.
+
+## The calls that arrive when nobody is at the desk
+
+The case for this is not the easy calls. It is the ones that arrive at 3am, the ones that ring while the whole team is in surgery, and the ones that come in during a lunch break when the front desk is one person deep.
+
+A practice running one to six veterinarians typically has no overnight front desk. The phone goes to a voicemail box, to a shared mobile somebody has to carry, or to an answering service that takes a message and sends it over in the morning. Each carries a cost that does not appear on an invoice: the client who called two practices and booked with the one that answered, and the emergency that presented twelve hours later in a worse state.
+
+### What the front desk reads at 8am
+
+The front desk gets a written summary per call rather than a queue of voicemails. Each summary carries the caller, the patient if known, what was reported, which branch of the protocol was applied, and what was booked or routed as a result.
+
+The team reads it the way they read the overnight email — once, quickly, with the actions already taken. That is the difference between a message service, which transfers the work to the morning, and a system that books, which transfers the outcome.
+
+## Setting up the ezyVet connection
+
+Setup is a configuration exercise, not a development project. The practice supplies access to ezyVet, the written emergency protocol, and the routing list of named people for clinical questions.
+
+### What you hand over
+
+Before any call is handled, the practice provides the raw material the system works from. This is the same list whether you run ezyVet or another PIMS, and most of it already exists in some form.
+
+- ezyVet API credentials or the integration path your ezyVet account manager confirms, depending on your hosting arrangement.
+- The emergency protocol document in whatever form it exists. A laminated card at the front desk is still a starting point.
+- Appointment types and durations as configured in ezyVet, so bookings land on the right resource.
+- The escalation list: who is called, in what order, for which branch of the protocol.
+- Opening hours, holiday closures, and the point at which after-hours rates apply.
+
+Once these are in place, the configuration is done against your existing ezyVet instance rather than built from scratch.
+
+### What gets tested before go-live
+
+A test client record is created in ezyVet and scripted calls are run against it: a routine booking, a new client, an urgent presentation that should route to a vet, and a call that should produce a message only. Each is checked in ezyVet to confirm the appointment, the patient match and the summary landed correctly.
+
+Most practices run this alongside their existing arrangement for a period rather than switching overnight. The [integrations overview](/works-with-the-software-veterinary-practices-already-run/) shows how the same pattern works on other systems, and the [Avimark integration](/blog/avimark-integration/) page covers a different platform.
+
+## How this compares to the alternatives
+
+| Approach | Who answers at 3am | Where the booking lands | What the morning looks like |
+|---|---|---|---|
+| Voicemail on the practice line | Nobody | Nowhere | A queue of messages to return |
+| Shared mobile carried by a vet | Whoever is on call | Nowhere until they log it | Clinical staff doing reception work |
+| Traditional answering service | An operator with a script | A message, sometimes a portal | Messages to re-key into ezyVet |
+| VetReception | The system, against your protocol | Written into the PIMS | Summaries with actions already taken |
+
+The traditional answering service is the closest comparison and the one most practices have used. Its operators usually work from a generic script across many industries, and the output is a message. Those services often quote per call or per minute, and many do not publish rates at all — where a provider does not publish pricing, treat the cost as unknown until you have a written quote.
+
+VetReception is priced by practice rather than per call, so a busy Saturday does not change the invoice. The structure is set out on the [veterinary practices pricing](/pricing-for-veterinary-practices/) page.
+
+## What to check before you commit
+
+Four things decide whether an integration like this works in your practice, and none of them are about the software.
+
+### 1. Is your protocol written down?
+
+If the emergency protocol lives in the heads of two senior vets, it needs writing down before any system can follow it. This is usually the most useful part of the exercise, because it forces the practice to agree on what counts as an emergency.
+
+### 2. Who is the named person for clinical questions?
+
+Every protocol branch ending in speak to a vet needs a real rota behind it. If the answer is whoever picks up, the escalation path fails on the night it matters.
+
+### 3. How does your ezyVet instance handle duplicates?
+
+Check how many client records share a phone number. A high duplicate rate means more calls get flagged for human review, which is correct behaviour but changes the workload.
+
+### 4. What does the schedule look like at 8am?
+
+Ask what the front desk will do with the summaries. If the answer is nothing, because everything is already booked, the integration is doing its job.
+
+## Where ezyVet sits among the PIMS options
+
+ezyVet is one of several practice management systems in use across small-animal practices, and the integration approach differs by system. The [integrations overview](/works-with-the-software-veterinary-practices-already-run/) covers booking and call summaries across the systems VetReception connects to.
+
+If your practice runs ezyVet alongside another system for a specific function, the booking still belongs in ezyVet as the clinical record. For the call flow end to end, the [AI receptionist for veterinary clinics](/blog/ai-receptionist-for-veterinary-clinics/) guide covers ring to summary.
+
+## The short version
+
+VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning — triages it against the practice's own emergency protocol rather than a generic script, books the appointment straight into the PIMS, and leaves the front desk a written summary instead of a voicemail to work through. On ezyVet, the appointment, the patient match and the call summary all exist in the system your team already opens at 8am, with no re-keying and no message queue.
+
+The system never gives clinical advice; everything clinical routes to a named person on your protocol. Setup is configuration against your existing ezyVet instance, tested with scripted calls before go-live.
