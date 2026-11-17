@@ -1,0 +1,143 @@
+---
+title: "Veterinary Client Communication: Calls, Triage, PIMS Booking"
+description: "How veterinary client communication works when every call is answered, triaged against the practice's own written emergency protocol, and booked into the PIMS."
+pageType: "article"
+keyword: "veterinary client communication"
+schemaType: "Article"
+publishedAt: "2026-11-17"
+updatedAt: "2026-11-16"
+brand: "VetReception"
+faq:
+  - q: "Does VetReception give clinical advice to callers?"
+    a: "No. The system asks the questions in the practice's own written emergency protocol and routes on the answers, but it never gives clinical advice. Any call that needs a clinical answer — a question about medication, a symptom interpretation, a prognosis — is routed to a named person at the practice, with the caller's answers attached to the record. That boundary is deliberate: the system's job is to sort and book, not to practise. The practice approves the routing rules before go-live, so the named contacts and the thresholds are the practice's own decisions rather than vendor defaults."
+  - q: "What happens if the call is a genuine emergency at 3am?"
+    a: "The call is answered, the protocol questions are asked, and if the answers cross the practice's emergency threshold the caller is told what to do next — typically to come in, or to call a named on-call contact. The front desk gets a written summary rather than a voicemail, so the person opening the practice in the morning sees the call, the answers, and the routing decision without listening to a recording. The system does not decide whether the animal is critical; it applies the threshold the practice wrote and hands the call to a person when that threshold is crossed."
+  - q: "Does it book into our PIMS or send us a message?"
+    a: "It books into the PIMS. The appointment is written into the live schedule, so the slot is held and the client record is updated the same way a front-desk booking would be. The front desk gets a written summary attached to that appointment, not a separate message to process. This matters because a booking that lives in a message is not a booking — it is a task competing with everything else at 8am. The PIMS remains the system of record; the phone system writes into it rather than maintaining a parallel calendar that has to be reconciled."
+  - q: "Which practice management systems does it work with?"
+    a: "The integrations cover the systems independent small-animal practices in the US commonly run, including Avimark, Cornerstone, ezyVet, Shepherd, and Vetspire. Each connection has its own page describing what it reads and writes, because the depth of integration differs between systems. The requirement is the same across all of them: the phone system must be able to read the live schedule and write an appointment back, not just export a summary. If your PIMS is not on the list, the question to ask is whether it exposes a booking interface at all, because that determines what is possible."
+  - q: "How is pricing structured?"
+    a: "Pricing is based on call volume rather than a flat per-seat fee, so a one-veterinarian practice and a six-veterinarian practice do not pay the same amount for very different phone loads. The full structure is set out on the veterinary practices pricing page. The relevant comparison is not the per-call rate against a generic answering service, but the cost of the calls that currently go to voicemail and never become appointments. A practice that answers every call is converting calls that already happened into appointments that already exist."
+  - q: "Does this replace our front desk staff?"
+    a: "No. It removes the calls the front desk physically cannot take — the ones arriving during surgery, after the last appointment, and overnight — and returns them as written summaries attached to appointments. The front desk still checks clients in, handles the pharmacy counter, takes payments, and manages the room. What changes is the input: instead of a voicemail queue to work through in the morning, there is a summary queue where each item is already attached to a booked appointment. The staff time saved is the time spent listening to messages and re-entering them into the PIMS."
+---
+
+<span data-studio-release="df04d75ac2ea0ab6e208f9a1136c7e34b86e42344d50a87c96d0f25f2204e496" hidden></span>
+Veterinary client communication begins with whether the phone gets answered at all. A practice that answers every call, sorts it against the protocol its own veterinarians wrote, and books the appointment into the PIMS has solved the part of client communication that happens before the client ever reaches the building.
+
+The rest of this page is about the mechanics of that: what the caller hears, what the front desk receives, what the system refuses to do, and how it compares to the options a practice is already weighing.
+
+## Why the phone is the weak link in client communication
+
+Client communication is usually discussed as an exam-room skill — explaining a treatment plan, handling cost conversations, following up after surgery. Those matter. But the first exchange a practice has with a client is almost always a phone call, and it is the one most likely to fail, because it arrives at a time when nobody is free to take it.
+
+A practice running one to six veterinarians has a front desk that is also the pharmacy counter, the check-in desk, and the person holding a dog for a radiograph. The phone rings during all of it. After the last appointment, during a surgery block, and between midnight and the first morning arrival, there is often nobody at the desk at all.
+
+### What a missed call actually costs
+
+The cost is not the call. It is the appointment that never got booked, the client who dialled the next practice on the list, and the staff time the following morning spent listening to a recording and re-entering it into the PIMS by hand.
+
+A missed call is also invisible in most practice reporting. The phone system logs it; the PIMS does not, because nothing was created. That is why missed-call volume tends to be underestimated by the people closest to it — the front desk remembers the calls it handled, not the ones that rang out while it was in the treatment room.
+
+## What a call has to produce to count as handled
+
+A call is only handled if it produces three things: an answer, a routing decision, and a record. Most setups deliver one or two.
+
+A voicemail produces a recording but no routing decision and no answer in the moment. A generic answering service produces an answer and a message, but the routing decision is made against a script that does not know your patients or your history fields. A staff member on call produces all three, until the second call of the night arrives while they are driving in.
+
+The distinction that matters is whether the routing decision is made against something the practice controls. A generic urgency model asks how urgent this is and returns a number. A protocol-driven system asks the questions your practice already agreed on: how long has the animal been straining, is there a known cardiac history, has the pet been hit by a car, can the owner come in tonight.
+
+## Triage against the practice's own written emergency protocol
+
+The boundary cases are where generic models fail. Your protocol might treat a vomiting dog with a known foreign-body surgery history as a same-night call and a vomiting dog with no history as a next-morning call. A model that does not know your history fields cannot make that distinction, so it either over-routes — sending everything in — or under-routes and misses the one that mattered.
+
+VetReception triages against the practice's own written emergency protocol rather than a generic script. The questions asked on the call are the questions your veterinarians already wrote down, and the routing decision follows the same logic your team would use at the desk. When the protocol changes, the questions change with it.
+
+### What the caller hears, in order
+
+The caller hears a greeting in the practice's name, then a short set of questions drawn from the protocol. If the answers cross a threshold, the caller is told what to do next — come in now, call a named number, or expect a call back within a stated window. If the answers do not cross a threshold, the caller is offered an appointment slot from the practice's live schedule.
+
+At no point does the system tell the caller what is wrong with the animal. It never gives clinical advice. Anything clinical is routed to a named person at the practice, with the caller's answers attached, and the practice chooses who that person is before go-live.
+
+### What the front desk gets in the morning
+
+The front desk does not get a voicemail. It gets a written summary: caller name, pet name, the protocol questions asked, the answers given, the routing decision, and the appointment that was booked. The summary is attached to the client record, so the person checking the pet in at 8am already knows why the call happened and does not have to reconstruct it from a recording.
+
+That is the difference between a queue of tasks and a queue of decisions already made. A voicemail has to be listened to, interpreted, and re-entered into the PIMS by someone who was not on the call and cannot ask a follow-up question. A summary attached to an appointment has already been through all three steps.
+
+## Booking written into the PIMS, not into a message
+
+A booking that lives in a message is not a booking. It is a promise to make a booking later, and at 8am it competes with every other task the front desk has.
+
+VetReception writes the appointment straight into the PIMS. The slot is held, the client record is updated, and the appointment appears in the schedule the same way a front-desk booking does. The practice's software stays the system of record; the phone system is a writer into it, not a parallel calendar that has to be reconciled.
+
+Two consequences follow. Double-booking disappears, because the phone system and the front desk read the same schedule. And the call summary sits with the appointment, so the veterinarian opening the record sees the triage answers without asking anyone.
+
+If your practice runs Avimark, Cornerstone, ezyVet, Shepherd, or Vetspire, the integration is the first thing worth checking. See [Avimark integration](/blog/avimark-integration/), [Cornerstone practice management phone](/blog/cornerstone-practice-management-phone/), [ezyVet integration](/blog/ezyvet-integration/), [Shepherd veterinary software integration](/blog/shepherd-veterinary-software-integration/), and [Vetspire integration](/blog/vetspire-integration/) for what each connection reads and writes. The requirements are the same across all of them, and [PIMS integration phone system](/blog/pims-integration-phone-system/) covers what a phone system must be able to read and write before connecting it is worth the effort.
+
+## The calls that arrive when nobody is at the desk
+
+A practice with no overnight front desk has three windows where the phone is effectively unattended: after the last appointment, during surgery blocks, and between midnight and the first morning arrival.
+
+VetReception answers every call a veterinary practice cannot get to — after hours, during surgery, and at three in the morning. That includes the ones that arrive at 3am, which are also the calls most likely to be a genuine emergency and most likely to be lost to whichever practice answers next.
+
+During surgery the front desk is often physically in the treatment room, and the phone still rings. The difference between a system that answers and one that does not is whether the practice captures a same-day appointment or explains a missed call the next morning.
+
+### Where refill and routine calls fit
+
+Not every call is an emergency. A large share of incoming volume is refill requests, appointment changes, and questions about hours or directions. These do not need a veterinarian, but they do need to be logged and routed, and they should not compete with emergency calls for the same attention.
+
+A [prescription refill request line](/blog/prescription-refill-request-line/) handles the refill category separately, so the refill workflow does not interrupt triage. The same logic applies to scheduling: [veterinary appointment scheduling software](/blog/veterinary-appointment-scheduling-software/) is only useful if the booking lands in the PIMS rather than a separate calendar.
+
+## What the system will not do
+
+The boundaries are worth stating plainly, because they are the reason it is safe to put in front of a client.
+
+- It does not give clinical advice. Any question requiring a clinical answer is routed to a named person.
+- It does not replace the front desk. It removes the calls the front desk physically cannot take and returns them as written summaries.
+- It does not invent a protocol. The triage logic is built from the practice's own written emergency protocol, which the practice approves before go-live.
+- It does not tell the caller what is wrong with the animal. It asks the questions the practice wrote and routes on the answers.
+
+## How this compares to the alternatives
+
+| Option | Answers after hours | Triage basis | Booking | What the front desk gets |
+|---|---|---|---|---|
+| Voicemail | As a recording | None | None | A message to listen to |
+| Generic answering service | By a person | Generic urgency script | Message only | A message, sometimes typed |
+| Staff on call | Sometimes | The individual's judgement | Manual, next morning | A verbal handover |
+| VetReception | Every call | The practice's own written emergency protocol | Written into the PIMS | A written summary attached to the record |
+
+The comparison is not about which option costs least per call. It is about which option produces a booked appointment and a record the practice can act on. A voicemail produces neither. A generic service produces a message. Only a system that writes into the PIMS produces a schedule entry.
+
+## What setup involves
+
+Setup is built around the protocol, not the phone number. The practice supplies its written emergency protocol — the same document the veterinarians already use — and the triage questions are derived from it. The practice reviews and approves the routing rules before any call is handled.
+
+The PIMS connection is configured next, so the system can read the live schedule and write appointments back. Most practices run a period where calls are handled and summaries are reviewed before the system is left to book unattended.
+
+Nothing about the front desk's workflow changes except the input. Instead of a voicemail queue there is a summary queue, and each summary is already attached to an appointment.
+
+## Where the money goes
+
+The cost of a missed call is not the call. It is the appointment that did not get booked, the client who called the next practice, and the staff time spent reconstructing a message the following morning.
+
+Pricing for VetReception is based on call volume rather than a flat per-seat fee, so a one-veterinarian practice and a six-veterinarian practice are not paying the same amount for very different phone loads. The full structure is set out on [veterinary practices pricing](/pricing-for-veterinary-practices/).
+
+If you want to see how the numbers work for a practice your size, the [veterinary call cost calculator](/what-veterinary-practices-spend-on-this-a-calculator/) walks through call volume, missed-call rate, and average appointment value. The [benchmarks for veterinary practices](/blog/benchmarks-for-veterinary-practices/) page covers what typical call answering and triage data looks like across small-animal practices.
+
+## What to check before you commit
+
+Four questions determine whether a system will work in a given practice.
+
+1. Does it read and write your specific PIMS, or only export a summary?
+2. Can the triage questions be edited when your protocol changes?
+3. What happens to a call that crosses a threshold — who is named as the contact, and how are they reached?
+4. What does the front desk actually see the next morning, and where does it live?
+
+If the answer to the first question is that you receive an email, the system is a message service with better branding. The point of [written into the PIMS](/works-with-the-software-veterinary-practices-already-run/) is that the booking is real the moment the call ends.
+
+## The short version
+
+Veterinary client communication fails at the phone, not in the exam room. A practice that answers every call, triages against its own protocol, and books into its own PIMS does not need a better script — it needs the call to become an appointment before the client hangs up.
+
+VetReception answers, triages and books veterinary calls 24/7 against the practice's own protocol, writing back into the PIMS. The [after hours vet phone answering](/blog/after-hours-vet-phone-answering/) page covers the overnight window in detail, and [how veterinary practices use it](/how-veterinary-practices-use-it/) shows the workflow end to end. For the call categories that sit outside emergencies, see [emergency vet call triage](/blog/emergency-vet-call-triage/) and [veterinary triage protocol phone](/blog/veterinary-triage-protocol-phone/).
